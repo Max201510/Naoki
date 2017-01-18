@@ -1,0 +1,4 @@
+ File No 1: a1.pgm, File No 2: a2.pgm, Found 572 matches. similarity = 0.971639
+
+ File No 1: a1.pgm, File No 2: a2.pgm, Found 572 matches. similarity = 0.971639
+

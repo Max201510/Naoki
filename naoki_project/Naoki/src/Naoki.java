@@ -2,7 +2,7 @@ import java.io.File;
 import java.util.ArrayList;
 
 public class Naoki {
-	static int boundTheshold = 0;
+	static int boundTheshold = 500;
 	static String folders = "/home/max/Matlab/New/Naoki/cc";// connected component folder
 
 	/**

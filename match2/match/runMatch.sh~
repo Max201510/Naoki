@@ -1,0 +1,15 @@
+#! /bin/sh
+
+export PATH=$PATH:/home/naoki/Desktop/match
+
+VAR=0
+
+for j in `seq 1 5`
+do
+
+array=$(find . -name a1.pgm -exec ./match -im1 {} -k1 {}.pkeys -im2 b$j.pgm -k2 b$j.pgm.pkeys > out$VAR.pgm \;)
+VAR=$(( VAR + 1 ))
+
+done
+echo ${#array[@]}
+

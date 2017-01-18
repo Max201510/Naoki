@@ -1,0 +1,29 @@
+match\KeyCreation - The file for creating the PCA-SIFT keys for images
+
+-to creat the key
+  1: Open the command prompt
+  2: open WhereYouSave\match\keyCreation
+  3: type "./run.sh"
+  4: it will create the keys for all pgm images
+
+
+match\match - The file is to find the matches between the images(LIP-IS+OOS) 
+
+-To get the matching 
+  1: open command prompt and open WhereYouSave\match\match
+  2: type:(./match -im1 image1 -k1 key1 -im2 image2 -k2 key2 > out.pgm)
+     Example: ./match -im1 image1.pgm -k1 image1.pgm.pkeys -im2 image2.pgm -k2 image2.pgm.pkeys > out.pgm
+or
+  2: type "./runMatch.sh"
+  3: this will find the match for
+       - a1.pgm with a1.pgm~a5.pgm
+  4: the file name can be change in "runMatch.sh" bash file
+
+
+
+The key creation(PCA-SIFT) files are given by Xiagnmin 
+The matching c file is name "match2.c"
+If you change any code in "match2.c" just type "make" to compile.
+it will create .o files and executable file "match"
+
+

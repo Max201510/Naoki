@@ -1,0 +1,6 @@
+#! /bin/sh
+
+export PATH=$PATH:/home/naoki/Desktop/keyCreation
+find . -name "*.pgm" -exec pcasift gpcavects.txt {} {}.pkeys \;
+
+
