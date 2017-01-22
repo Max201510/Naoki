@@ -1,0 +1,32 @@
+PCA-SIFT
+by Yan Ke
+
+This code implements the PCA-SIFT algorithm.  Keypoint localization uses
+David Lowe's Keypoint algorithm, using Difference of Gaussians.
+Keypoint representation is done through PCA gradient vectors.
+
+Given an image in PGM format, outputs keypoints in ascii text.
+The format is (mostly) compatible with David Lowe's keypoint format.
+Use the modified matching program to see the results (mod_lowe_demoV2.tar.gz)
+
+Usage:
+
+./pcasift gpcavects.txt image1.pgm image1.pkeys
+./pcasift gpcavects.txt image2.pgm image2.pkeys
+
+from mod_lowe_demoV2.tar.gz
+./match -im1 image1.pgm -k1 image1.pkeys -im2 image2.pgm -k2 image2.pkeys > out.pgm
+
+"getpatches" outputs the raw image patch used in calculating the local descriptor.
+This can be used to visualize the patches.
+
+"gathergrads" turns the raw patches into normalized gradient x and y vectors,
+one patch per line.  This can be used to train new PCA vectors.
+
+
+For more information, visit:
+
+http://www.cs.cmu.edu/~yke/pcasift/
+
+
+See also LICENSE.DL

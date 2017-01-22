@@ -1,0 +1,27 @@
+PCA-SIFT
+by Yan Ke
+
+This code implements the PCA-SIFT algorithm.  Interest point detection
+code must be obtained separately.  Any scale and orientation invariant
+interest point detector will work.  Interest point representation is done
+through PCA gradient vectors.
+
+Given an image in PGM format, outputs keypoints in ascii text.
+The format is (mostly) compatible with David Lowe's keypoint format.
+Use mod_lowe_demoV2.tar.gz to detect keypoints and match results.
+
+Usage:
+
+./keypoints < image1.pgm > image1.lkeys
+./keypoints < image2.pgm > image2.lkeys
+
+./recalckeys gpcavects.txt image1.pgm image1.lkeys image1.pkeys
+./recalckeys gpcavects.txt image2.pgm image2.lkeys image2.pkeys
+
+./match -im1 image1.pgm -k1 image1.pkeys -im2 image2.pgm -k2 image2.pkeys > out.pgm
+
+"keypoints" and "match" can be found in mod_lowe_demoV2.tar.gz
+
+For more information, visit:
+
+http://www.cs.cmu.edu/~yke/pcasift/
