@@ -1,0 +1,7 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: draftVer5.aux
+The style file: ieeetr.bst
+Database file #1: reference.bib
+Name 1 in "Suphakit Niwattanakul, Jatsada Singthongchai, Ekkachai Naenudorn, and Supachanun Wanapu" has a comma at the end for entry Jaccard
+while executing---line 963 of file ieeetr.bst
+Warning--can't use both author and editor fields in Berkhin2006
+(There was 1 error message)

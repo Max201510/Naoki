@@ -1,0 +1,36 @@
+over lap 1
+
+The area1 area = 457072
+The area2 area = 486569
+The overlap area = 379993
+The percentage of overlap area:
+ 379993/486569 = 78%
+
+
+over lap 2
+
+The area1 area = 457072
+The area2 area = 486569
+The overlap area = 379993
+The percentage of overlap area:
+ 379993/457072 = 83%
+
+
+over lap 1
+
+The area1 area = 457072
+The area2 area = 486569
+The overlap area = 379993
+The percentage of overlap area:
+ 379993/486569 = 78%
+
+
+over lap 2
+
+The area1 area = 457072
+The area2 area = 486569
+The overlap area = 379993
+The percentage of overlap area:
+ 379993/457072 = 83%
+
+

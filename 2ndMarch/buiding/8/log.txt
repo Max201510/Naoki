@@ -1,0 +1,50 @@
+over lap 1
+
+The area1 area = 871579
+The area2 area = 786421
+The overlap area = 598507
+The percentage of overlap area:
+ 598507/786421 = 76%
+
+
+over lap 2
+
+The area1 area = 871579
+The area2 area = 786421
+The overlap area = 641023
+The percentage of overlap area:
+ 641023/871579 = 73%
+
+
+The area1 area = 16160
+The area2 area = 113875
+The overlap area = 9679
+The percentage of overlap area:
+ 9679/16160 = 59%
+
+
+over lap 1
+
+The area1 area = 871579
+The area2 area = 786421
+The overlap area = 598507
+The percentage of overlap area:
+ 598507/786421 = 76%
+
+
+over lap 2
+
+The area1 area = 871579
+The area2 area = 786421
+The overlap area = 641023
+The percentage of overlap area:
+ 641023/871579 = 73%
+
+
+The area1 area = 16160
+The area2 area = 113875
+The overlap area = 9679
+The percentage of overlap area:
+ 9679/16160 = 59%
+
+

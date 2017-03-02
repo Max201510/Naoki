@@ -1,0 +1,36 @@
+over lap 1
+
+The area1 area = 229094
+The area2 area = 260114
+The overlap area = 205427
+The percentage of overlap area:
+ 205427/260114 = 78%
+
+
+over lap 2
+
+The area1 area = 229094
+The area2 area = 260114
+The overlap area = 205427
+The percentage of overlap area:
+ 205427/229094 = 89%
+
+
+over lap 1
+
+The area1 area = 229094
+The area2 area = 260114
+The overlap area = 205427
+The percentage of overlap area:
+ 205427/260114 = 78%
+
+
+over lap 2
+
+The area1 area = 229094
+The area2 area = 260114
+The overlap area = 205427
+The percentage of overlap area:
+ 205427/229094 = 89%
+
+

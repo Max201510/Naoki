@@ -1,0 +1,227 @@
+
+//////////////////////////////only use this//////////////////////////////////////////
+I = imread('t.pgm');
+I2 = imread('t2.pgm');
+
+BW=edge(I,'Canny');
+BW2=edge(I2,'Canny');
+
+CC = bwconncomp(BW,8)
+CC2 = bwconncomp(BW2,8)
+
+se90 = strel('line', 4, 90);
+se0 = strel('line', 4, 0);
+BWsdil = imdilate(BW, [se90 se0]);
+BWsdil2 = imdilate(BW2, [se90 se0]);
+
+BW5 = imfill(BWsdil  ,'holes');
+BW6 = imfill(BWsdil2 ,'holes');
+CC = bwconncomp(BW5,8)
+CC2 = bwconncomp(BW6,8)
+BW3 = bwareaopen(BW5, 500);
+BW4 = bwareaopen(BW6, 500);
+CC = bwconncomp(BW3,8)
+CC2 = bwconncomp(BW4,8)
+imshow(BW3)
+
+
+imwrite(BW3,'t.png')
+imwrite(BW4,'t2.png')
+
+
+stats=regionprops(CC,'pixellist')
+stats2=regionprops(CC2,'pixellist')
+
+
+file=fopen('t.txt','w')
+for i=1:CC.NumObjects
+fprintf(file,'%g %g\n', stats(i).PixelList')
+fprintf(file,'ob%g\n',i)
+end
+fclose(file)
+
+>> file=fopen('t2.txt','w')
+>> for i=1:CC2.NumObjects
+fprintf(file,'%g %g\n', stats2(i).PixelList')
+fprintf(file,'ob%g\n',i)
+end
+>> fclose(file)
+
+///////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+/////////////////////segmentation don't use this///////////////////////
+
+
+read image
+I = imread('t.pgm');
+I2 = imread('t2.pgm');
+
+rgb to gray
+GI = rgb2gray(I);
+GI2 = rgb2gray(I2);
+
+edge detection
+BW=edge(I,'Canny');
+BW2=edge(I2,'Canny');
+
+connectors
+CC = bwconncomp(BW,8)
+CC2 = bwconncomp(BW2,8)
+
+x and y
+stats=regionprops(CC,'pixellist')
+stats2=regionprops(CC2,'pixellist')
+
+
+
+
+mask
+se90 = strel('line', 3, 90);
+se0 = strel('line', 3, 0);
+BWsdil = imdilate(BW, [se90 se0]);
+BWsdil2 = imdilate(BW2, [se90 se0]);
+
+fill the space 
+>> BW5 = imfill(BWsdil ,'holes');
+>> BW6 = imfill(BWsdil2,'holes');
+
+remove on boardar
+seD = strel('diamond',1);
+BWfinal = imerode(BWnobord,seD);
+BWfinal = imerode(BWfinal,seD);
+figure, imshow(BWfinal), title('segmented image');
+
+
+remove less than 50 pixel
+BW3 = bwareaopen(BW5, 50);
+BW4 = bwareaopen(BW6, 50);
+
+save image
+>> imwrite(BW5,'t5.pgm')
+>> imwrite(BW6,'t6.pgm')
+
+
+connectors
+CC = bwconncomp(BW,8)
+CC2 = bwconncomp(BW2,8)
+
+
+save x and y to file: loop number object 
+file=fopen('t2.txt','w')
+for i=1:5
+fprintf(file,'%g %g\n', stats(i).PixelList')
+fprintf(file,'ob%g\n',i)
+end
+fclose(file)
+
+>> file=fopen('t2.txt','w')
+>> for i=1:5
+fprintf(file,'%g %g\n', stats(i).PixelList')
+fprintf(file,'ob%g\n',i)
+end
+>> fclose(file)
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////
+water shad
+
+I = imread('t.pgm');
+I2 = imread('t2.pgm');
+hy=fspecial('sobel');
+
+hx = hy';
+Iy = imfilter(double(I),hy,'replicate');
+Ix = imfilter(double(I),hx,'replicate');
+
+Iy2 = imfilter(double(I2),hy,'replicate');
+Ix2 = imfilter(double(I2),hx,'replicate');
+gradmag = sqrt(Ix.^2 + Iy.^2);
+
+imshow(gradmag,[]);
+L = watershed(gradmag);
+se = strel('disk',20);
+Io = imopen(I, se);
+imshow(Io);
+
+Ie = imerode(I, se);
+Iobr = imreconstruct(Ie, I);
+imshow(Iobr)
+Ioc = imclose(Io, se);
+imshow(Ioc)
+
+
+Iobrd = imdilate(Iobr, se);
+Iobrcbr = imreconstruct(imcomplement(Iobrd), imcomplement(Iobr));
+Iobrcbr = imcomplement(Iobrcbr);
+imshow(Iobrcbr)
+
+fgm = imregionalmax(Iobrcbr);
+I2 = I;
+I2(fgm) = 255;
+se2 = strel(ones(5,5));
+fgm2 = imclose(fgm, se2);
+fgm3 = imerode(fgm2, se2);
+fgm4 = bwareaopen(fgm3, 20);
+I3 = I;
+I3(fgm4) = 255;
+imshow(I3)
+bw = imbinarize(Iobrcbr);
+D = bwdist(bw);
+DL = watershed(D);
+bgm = DL == 0;
+
+gradmag2 = imimposemin(gradmag, bgm | fgm4);
+
+L = watershed(gradmag2);
+Lrgb = label2rgb(L, 'jet', 'w', 'shuffle');
+GI = rgb2gray(Lrgb);
+BW=edge(GI,'Canny');
+imshow(BW)
+
+
+
+CC = bwconncomp(BW,8)
+se90 = strel('line', 4, 90);
+se0 = strel('line', 4, 0);
+BWsdil = imdilate(BW, [se90 se0]);
+BWsdil2 = imdilate(BW2, [se90 se0]);
+BW5 = imfill(BWsdil  ,'holes');
+CC = bwconncomp(BW5,8)
+imshow(BW5)
+
+
+
+
+/////////////////////////////////////
+otu segment
+
+I = imread('t.pgm');
+
+background = imopen(I,strel('disk',15));
+
+surf(double(background(1:8:end,1:8:end))),zlim([0 255]);
+ax = gca;
+ax.YDir = 'reverse';
+I2 = I - background;
+imshow(I2)
+I3 = imadjust(I2);
+imshow(I3);
+T = graythresh(I);
+
+BW = im2bw(I,T);
+imshow(BW)
+BW = bwareaopen(BW, 50);
+imshow(BW)
