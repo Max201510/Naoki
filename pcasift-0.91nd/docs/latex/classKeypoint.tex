@@ -1,0 +1,194 @@
+\section{Keypoint Class Reference}
+\label{classKeypoint}\index{Keypoint@{Keypoint}}
+
+
+Class for one keypoint.  
+
+
+
+
+{\ttfamily \#include $<$keypoint.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Keypoint} (int ldlen)
+\item 
+{\bf $\sim$\+Keypoint} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float {\bf x}
+\begin{DoxyCompactList}\small\item\em x location of keypoint in base image \end{DoxyCompactList}\item 
+float {\bf y}
+\begin{DoxyCompactList}\small\item\em y location of keypoint in base image \end{DoxyCompactList}\item 
+float {\bf sx}
+\begin{DoxyCompactList}\small\item\em x location of keypoint in scaled image \end{DoxyCompactList}\item 
+float {\bf sy}
+\begin{DoxyCompactList}\small\item\em y location of keypoint in scaled image \end{DoxyCompactList}\item 
+int {\bf octave}
+\begin{DoxyCompactList}\small\item\em octave index of keypoint \end{DoxyCompactList}\item 
+int {\bf scale}
+\begin{DoxyCompactList}\small\item\em scale index of keypoint \end{DoxyCompactList}\item 
+float {\bf fscale}
+\begin{DoxyCompactList}\small\item\em interpolated scale index \end{DoxyCompactList}\item 
+float {\bf ori}
+\begin{DoxyCompactList}\small\item\em orientation of keypoint. Ranges from (-\/\+PI, PI) \end{DoxyCompactList}\item 
+float {\bf gscale}
+\begin{DoxyCompactList}\small\item\em scale of keypoint in pixels in base image. \end{DoxyCompactList}\item 
+vector$<$ float $>$ {\bf ld}
+\begin{DoxyCompactList}\small\item\em P\+CA local descriptor. \end{DoxyCompactList}\item 
+{\bf Image} $\ast$ {\bf patch}
+\begin{DoxyCompactList}\small\item\em image patch \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for one keypoint. 
+
+This class contains a keypoint\textquotesingle{}s location, orientation, scale, and P\+CA local descriptor. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Keypoint@{Keypoint}!Keypoint@{Keypoint}}
+\index{Keypoint@{Keypoint}!Keypoint@{Keypoint}}
+\subsubsection[{Keypoint(int ldlen)}]{\setlength{\rightskip}{0pt plus 5cm}Keypoint\+::\+Keypoint (
+\begin{DoxyParamCaption}
+\item[{int}]{ldlen}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classKeypoint_aa80840b0b454afb525d76fa116925b90}
+\index{Keypoint@{Keypoint}!````~Keypoint@{$\sim$\+Keypoint}}
+\index{````~Keypoint@{$\sim$\+Keypoint}!Keypoint@{Keypoint}}
+\subsubsection[{$\sim$\+Keypoint()}]{\setlength{\rightskip}{0pt plus 5cm}Keypoint\+::$\sim$\+Keypoint (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classKeypoint_a835e70cf3ad5ff951e561b615a07e6a7}
+
+
+\subsection{Member Data Documentation}
+\index{Keypoint@{Keypoint}!fscale@{fscale}}
+\index{fscale@{fscale}!Keypoint@{Keypoint}}
+\subsubsection[{fscale}]{\setlength{\rightskip}{0pt plus 5cm}float Keypoint\+::fscale}\label{classKeypoint_a187c6451e48ac1ffdfafa25f170d985d}
+
+
+interpolated scale index 
+
+
+
+Referenced by Keypoint\+Detector\+::\+Make\+Keypoint\+Patch(), Keypoint\+Detector\+::\+Make\+Local\+Patch(), and Keypoint\+Detector\+::\+Recalc\+Key\+Indices().
+
+\index{Keypoint@{Keypoint}!gscale@{gscale}}
+\index{gscale@{gscale}!Keypoint@{Keypoint}}
+\subsubsection[{gscale}]{\setlength{\rightskip}{0pt plus 5cm}float Keypoint\+::gscale}\label{classKeypoint_a1fa3ed838f4b05b688185386fe309d66}
+
+
+scale of keypoint in pixels in base image. 
+
+
+
+Referenced by Keypoint\+Detector\+::read\+Keys\+From\+File(), Keypoint\+Detector\+::read\+Patches\+From\+File(), and Keypoint\+Detector\+::\+Recalc\+Key\+Indices().
+
+\index{Keypoint@{Keypoint}!ld@{ld}}
+\index{ld@{ld}!Keypoint@{Keypoint}}
+\subsubsection[{ld}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$float$>$ Keypoint\+::ld}\label{classKeypoint_ab0ba078d640458b8a75ee16ac57f4d6f}
+
+
+P\+CA local descriptor. 
+
+
+
+Referenced by Keypoint\+Detector\+::\+Make\+Keypoint\+P\+C\+A(), and Keypoint\+Detector\+::read\+Keys\+From\+File().
+
+\index{Keypoint@{Keypoint}!octave@{octave}}
+\index{octave@{octave}!Keypoint@{Keypoint}}
+\subsubsection[{octave}]{\setlength{\rightskip}{0pt plus 5cm}int Keypoint\+::octave}\label{classKeypoint_a428aed23a97a21bbd8342f8acf39cf07}
+
+
+octave index of keypoint 
+
+
+
+Referenced by Keypoint\+Detector\+::\+Recalc\+Key\+Indices().
+
+\index{Keypoint@{Keypoint}!ori@{ori}}
+\index{ori@{ori}!Keypoint@{Keypoint}}
+\subsubsection[{ori}]{\setlength{\rightskip}{0pt plus 5cm}float Keypoint\+::ori}\label{classKeypoint_a57cd0362fd3a20ddb5bad8f1909f2d61}
+
+
+orientation of keypoint. Ranges from (-\/\+PI, PI) 
+
+
+
+Referenced by Keypoint\+Detector\+::\+Make\+Keypoint\+Patch(), Keypoint\+Detector\+::\+Make\+Local\+Patch(), Keypoint\+Detector\+::read\+Keys\+From\+File(), and Keypoint\+Detector\+::read\+Patches\+From\+File().
+
+\index{Keypoint@{Keypoint}!patch@{patch}}
+\index{patch@{patch}!Keypoint@{Keypoint}}
+\subsubsection[{patch}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Image}$\ast$ Keypoint\+::patch}\label{classKeypoint_ac2ac91266f8082104197c5e96cf0787a}
+
+
+image patch 
+
+
+
+Referenced by Keypoint\+Detector\+::\+Make\+Local\+Patch(), and Keypoint\+Detector\+::read\+Patches\+From\+File().
+
+\index{Keypoint@{Keypoint}!scale@{scale}}
+\index{scale@{scale}!Keypoint@{Keypoint}}
+\subsubsection[{scale}]{\setlength{\rightskip}{0pt plus 5cm}int Keypoint\+::scale}\label{classKeypoint_a2bc4d3c108d7b794d7ce88072caf4aa1}
+
+
+scale index of keypoint 
+
+
+
+Referenced by Keypoint\+Detector\+::\+Recalc\+Key\+Indices().
+
+\index{Keypoint@{Keypoint}!sx@{sx}}
+\index{sx@{sx}!Keypoint@{Keypoint}}
+\subsubsection[{sx}]{\setlength{\rightskip}{0pt plus 5cm}float Keypoint\+::sx}\label{classKeypoint_a74d20e9a26e7ab91c240c489d61d1d1e}
+
+
+x location of keypoint in scaled image 
+
+
+
+Referenced by Keypoint\+Detector\+::\+Make\+Keypoint\+Patch(), Keypoint\+Detector\+::\+Make\+Local\+Patch(), and Keypoint\+Detector\+::\+Recalc\+Key\+Indices().
+
+\index{Keypoint@{Keypoint}!sy@{sy}}
+\index{sy@{sy}!Keypoint@{Keypoint}}
+\subsubsection[{sy}]{\setlength{\rightskip}{0pt plus 5cm}float Keypoint\+::sy}\label{classKeypoint_abdbd7c7242d3fbca86979940cfde905e}
+
+
+y location of keypoint in scaled image 
+
+
+
+Referenced by Keypoint\+Detector\+::\+Make\+Keypoint\+Patch(), Keypoint\+Detector\+::\+Make\+Local\+Patch(), and Keypoint\+Detector\+::\+Recalc\+Key\+Indices().
+
+\index{Keypoint@{Keypoint}!x@{x}}
+\index{x@{x}!Keypoint@{Keypoint}}
+\subsubsection[{x}]{\setlength{\rightskip}{0pt plus 5cm}float Keypoint\+::x}\label{classKeypoint_a750bdbcf6567b42842970f67774f3d19}
+
+
+x location of keypoint in base image 
+
+
+
+Referenced by Keypoint\+Detector\+::read\+Keys\+From\+File(), Keypoint\+Detector\+::read\+Patches\+From\+File(), and Keypoint\+Detector\+::\+Recalc\+Key\+Indices().
+
+\index{Keypoint@{Keypoint}!y@{y}}
+\index{y@{y}!Keypoint@{Keypoint}}
+\subsubsection[{y}]{\setlength{\rightskip}{0pt plus 5cm}float Keypoint\+::y}\label{classKeypoint_a4ace6080aa73a9aeda4436bf6feb367b}
+
+
+y location of keypoint in base image 
+
+
+
+Referenced by Keypoint\+Detector\+::read\+Keys\+From\+File(), Keypoint\+Detector\+::read\+Patches\+From\+File(), and Keypoint\+Detector\+::\+Recalc\+Key\+Indices().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf keypoint.\+h}\end{DoxyCompactItemize}

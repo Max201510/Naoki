@@ -1,0 +1,286 @@
+\section{image.\+cc File Reference}
+\label{image_8cc}\index{image.\+cc@{image.\+cc}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$assert.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include $<$pgm.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}image.\+h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf G\+A\+U\+S\+S\+K\+E\+RN}~4
+\item 
+\#define {\bf PI}~3.\+14159265358979323846
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf normalize\+Mat} (vector$<$ vector$<$ float $>$ $>$ \&mat)
+\begin{DoxyCompactList}\small\item\em Normalizes a matrix to unit length. \end{DoxyCompactList}\item 
+void {\bf normalize\+Vec} (vector$<$ float $>$ \&vec)
+\begin{DoxyCompactList}\small\item\em Normalizes a vector to unit length. \end{DoxyCompactList}\item 
+vector$<$ float $>$ {\bf Gaussian\+Kernel1D} (float sigma)
+\begin{DoxyCompactList}\small\item\em Creates a 1D Gaussian kernel. \end{DoxyCompactList}\item 
+float {\bf Convolve\+Loc\+Width} (vector$<$ float $>$ \&kernel, {\bf Image} $\ast$src, int x, int y)
+\begin{DoxyCompactList}\small\item\em Convolve an image along the X direction at a particular pixel location. \end{DoxyCompactList}\item 
+void {\bf Convolve1\+D\+Width} (vector$<$ float $>$ \&kern, {\bf Image} $\ast$src, {\bf Image} $\ast$dst)
+\item 
+float {\bf Convolve\+Loc\+Height} (vector$<$ float $>$ \&kernel, {\bf Image} $\ast$src, int x, int y)
+\begin{DoxyCompactList}\small\item\em Convolve an image along the Y direction at a particular pixel location. \end{DoxyCompactList}\item 
+void {\bf Convolve1\+D\+Height} (vector$<$ float $>$ \&kern, {\bf Image} $\ast$src, {\bf Image} $\ast$dst)
+\item 
+void {\bf Blur\+Image} ({\bf Image} $\ast$src, {\bf Image} $\ast$dst, float sigma)
+\begin{DoxyCompactList}\small\item\em Does Gaussian smoothing of an image. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ float $>$ $>$ {\bf Gaussian\+Kernel2D} (float sigma)
+\begin{DoxyCompactList}\small\item\em Calculates a 2D Gaussian kernel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{image.\+cc@{image.\+cc}!G\+A\+U\+S\+S\+K\+E\+RN@{G\+A\+U\+S\+S\+K\+E\+RN}}
+\index{G\+A\+U\+S\+S\+K\+E\+RN@{G\+A\+U\+S\+S\+K\+E\+RN}!image.\+cc@{image.\+cc}}
+\subsubsection[{G\+A\+U\+S\+S\+K\+E\+RN}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+A\+U\+S\+S\+K\+E\+RN~4}\label{image_8cc_a19c0a9b6b79c51d68a6b175d14b160da}
+
+
+Referenced by Gaussian\+Kernel1\+D(), and Gaussian\+Kernel2\+D().
+
+\index{image.\+cc@{image.\+cc}!PI@{PI}}
+\index{PI@{PI}!image.\+cc@{image.\+cc}}
+\subsubsection[{PI}]{\setlength{\rightskip}{0pt plus 5cm}\#define PI~3.\+14159265358979323846}\label{image_8cc_a598a3330b3c21701223ee0ca14316eca}
+
+
+Referenced by Gaussian\+Kernel1\+D(), and Gaussian\+Kernel2\+D().
+
+
+
+\subsection{Function Documentation}
+\index{image.\+cc@{image.\+cc}!Blur\+Image@{Blur\+Image}}
+\index{Blur\+Image@{Blur\+Image}!image.\+cc@{image.\+cc}}
+\subsubsection[{Blur\+Image(\+Image $\ast$src, Image $\ast$dst, float sigma)}]{\setlength{\rightskip}{0pt plus 5cm}void Blur\+Image (
+\begin{DoxyParamCaption}
+\item[{{\bf Image} $\ast$}]{src, }
+\item[{{\bf Image} $\ast$}]{dst, }
+\item[{float}]{sigma}
+\end{DoxyParamCaption}
+)}\label{image_8cc_a0d1d95943d2efdab976024608da7614a}
+
+
+Does Gaussian smoothing of an image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Source image \\
+\hline
+{\em dst} & Destination image \\
+\hline
+{\em sigma} & Sigma of Gaussian weighting function. \\
+\hline
+\end{DoxyParams}
+
+
+References Convolve1\+D\+Height(), Convolve1\+D\+Width(), Gaussian\+Kernel1\+D(), Image\+::height, Image\+::\+Image(), and Image\+::width.
+
+
+
+Referenced by Keypoint\+Detector\+::\+Build\+Gaussian\+Scales(), and Keypoint\+Detector\+::\+Scale\+Init\+Image().
+
+\index{image.\+cc@{image.\+cc}!Convolve1\+D\+Height@{Convolve1\+D\+Height}}
+\index{Convolve1\+D\+Height@{Convolve1\+D\+Height}!image.\+cc@{image.\+cc}}
+\subsubsection[{Convolve1\+D\+Height(vector$<$ float $>$ \&kern, Image $\ast$src, Image $\ast$dst)}]{\setlength{\rightskip}{0pt plus 5cm}void Convolve1\+D\+Height (
+\begin{DoxyParamCaption}
+\item[{vector$<$ float $>$ \&}]{kern, }
+\item[{{\bf Image} $\ast$}]{src, }
+\item[{{\bf Image} $\ast$}]{dst}
+\end{DoxyParamCaption}
+)}\label{image_8cc_a3d3afbafa62e0194c6d1a3457b0b59b4}
+
+
+References Convolve\+Loc\+Height(), Image\+::height, Image\+::set\+Pixel(), and Image\+::width.
+
+
+
+Referenced by Blur\+Image().
+
+\index{image.\+cc@{image.\+cc}!Convolve1\+D\+Width@{Convolve1\+D\+Width}}
+\index{Convolve1\+D\+Width@{Convolve1\+D\+Width}!image.\+cc@{image.\+cc}}
+\subsubsection[{Convolve1\+D\+Width(vector$<$ float $>$ \&kern, Image $\ast$src, Image $\ast$dst)}]{\setlength{\rightskip}{0pt plus 5cm}void Convolve1\+D\+Width (
+\begin{DoxyParamCaption}
+\item[{vector$<$ float $>$ \&}]{kern, }
+\item[{{\bf Image} $\ast$}]{src, }
+\item[{{\bf Image} $\ast$}]{dst}
+\end{DoxyParamCaption}
+)}\label{image_8cc_a77afe85a933e05c9c44b59ee4f512d82}
+
+
+References Convolve\+Loc\+Width(), Image\+::height, Image\+::set\+Pixel(), and Image\+::width.
+
+
+
+Referenced by Blur\+Image().
+
+\index{image.\+cc@{image.\+cc}!Convolve\+Loc\+Height@{Convolve\+Loc\+Height}}
+\index{Convolve\+Loc\+Height@{Convolve\+Loc\+Height}!image.\+cc@{image.\+cc}}
+\subsubsection[{Convolve\+Loc\+Height(vector$<$ float $>$ \&kernel, Image $\ast$src, int x, int y)}]{\setlength{\rightskip}{0pt plus 5cm}float Convolve\+Loc\+Height (
+\begin{DoxyParamCaption}
+\item[{vector$<$ float $>$ \&}]{kernel, }
+\item[{{\bf Image} $\ast$}]{src, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\label{image_8cc_a06b9b9344e0f8a9af5d01671b2d11124}
+
+
+Convolve an image along the Y direction at a particular pixel location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kernel} & Kernel to convolve with. \\
+\hline
+{\em src} & Source image \\
+\hline
+{\em x} & x pixel location \\
+\hline
+{\em y} & y pixel location \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Convolved value at location (x, y) 
+\end{DoxyReturn}
+
+
+References Image\+::get\+Pixel(), and Image\+::height.
+
+
+
+Referenced by Convolve1\+D\+Height().
+
+\index{image.\+cc@{image.\+cc}!Convolve\+Loc\+Width@{Convolve\+Loc\+Width}}
+\index{Convolve\+Loc\+Width@{Convolve\+Loc\+Width}!image.\+cc@{image.\+cc}}
+\subsubsection[{Convolve\+Loc\+Width(vector$<$ float $>$ \&kernel, Image $\ast$src, int x, int y)}]{\setlength{\rightskip}{0pt plus 5cm}float Convolve\+Loc\+Width (
+\begin{DoxyParamCaption}
+\item[{vector$<$ float $>$ \&}]{kernel, }
+\item[{{\bf Image} $\ast$}]{src, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\label{image_8cc_a88306a23973141d415e70661fcf96735}
+
+
+Convolve an image along the X direction at a particular pixel location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kernel} & Kernel to convolve with. \\
+\hline
+{\em src} & Source image \\
+\hline
+{\em x} & x pixel location \\
+\hline
+{\em y} & y pixel location \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Convolved value at location (x, y) 
+\end{DoxyReturn}
+
+
+References Image\+::get\+Pixel(), and Image\+::width.
+
+
+
+Referenced by Convolve1\+D\+Width().
+
+\index{image.\+cc@{image.\+cc}!Gaussian\+Kernel1D@{Gaussian\+Kernel1D}}
+\index{Gaussian\+Kernel1D@{Gaussian\+Kernel1D}!image.\+cc@{image.\+cc}}
+\subsubsection[{Gaussian\+Kernel1\+D(float sigma)}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$float$>$ Gaussian\+Kernel1D (
+\begin{DoxyParamCaption}
+\item[{float}]{sigma}
+\end{DoxyParamCaption}
+)}\label{image_8cc_a200738a749203c47d1582ee5ad311e27}
+
+
+Creates a 1D Gaussian kernel. 
+
+Kernel is always odd.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sigma} & Sigma of Gaussian weighting function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1D Gaussian kernel 
+\end{DoxyReturn}
+
+
+References G\+A\+U\+S\+S\+K\+E\+RN, normalize\+Vec(), and PI.
+
+
+
+Referenced by Blur\+Image().
+
+\index{image.\+cc@{image.\+cc}!Gaussian\+Kernel2D@{Gaussian\+Kernel2D}}
+\index{Gaussian\+Kernel2D@{Gaussian\+Kernel2D}!image.\+cc@{image.\+cc}}
+\subsubsection[{Gaussian\+Kernel2\+D(float sigma)}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$vector$<$float$>$ $>$ Gaussian\+Kernel2D (
+\begin{DoxyParamCaption}
+\item[{float}]{sigma}
+\end{DoxyParamCaption}
+)}\label{image_8cc_a1edce0455a8cf1735d4446d7a7281420}
+
+
+Calculates a 2D Gaussian kernel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sigma} & Sigma of Gaussian weighting function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+2D matrix of kernel. 
+\end{DoxyReturn}
+
+
+References G\+A\+U\+S\+S\+K\+E\+RN, normalize\+Mat(), and PI.
+
+\index{image.\+cc@{image.\+cc}!normalize\+Mat@{normalize\+Mat}}
+\index{normalize\+Mat@{normalize\+Mat}!image.\+cc@{image.\+cc}}
+\subsubsection[{normalize\+Mat(vector$<$ vector$<$ float $>$ $>$ \&mat)}]{\setlength{\rightskip}{0pt plus 5cm}void normalize\+Mat (
+\begin{DoxyParamCaption}
+\item[{vector$<$ vector$<$ float $>$ $>$ \&}]{mat}
+\end{DoxyParamCaption}
+)}\label{image_8cc_a2e50347e5d534924373d5fe33c1763f7}
+
+
+Normalizes a matrix to unit length. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & Matrix to normalize \\
+\hline
+\end{DoxyParams}
+
+
+Referenced by Gaussian\+Kernel2\+D().
+
+\index{image.\+cc@{image.\+cc}!normalize\+Vec@{normalize\+Vec}}
+\index{normalize\+Vec@{normalize\+Vec}!image.\+cc@{image.\+cc}}
+\subsubsection[{normalize\+Vec(vector$<$ float $>$ \&vec)}]{\setlength{\rightskip}{0pt plus 5cm}void normalize\+Vec (
+\begin{DoxyParamCaption}
+\item[{vector$<$ float $>$ \&}]{vec}
+\end{DoxyParamCaption}
+)}\label{image_8cc_a92d0c171bdd42abda27470b11f29e2d5}
+
+
+Normalizes a vector to unit length. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & vector to normalize \\
+\hline
+\end{DoxyParams}
+
+
+Referenced by Gaussian\+Kernel1\+D().
+

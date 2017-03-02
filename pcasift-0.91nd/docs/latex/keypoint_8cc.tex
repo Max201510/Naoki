@@ -1,0 +1,121 @@
+\section{keypoint.\+cc File Reference}
+\label{keypoint_8cc}\index{keypoint.\+cc@{keypoint.\+cc}}
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}keypoint.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$assert.\+h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf PI}~3.\+14159265358979323846
+\item 
+\#define {\bf Patch\+Mag}~20
+\begin{DoxyCompactList}\small\item\em \doxyref{Keypoint}{p.}{classKeypoint} window sample size is Patch\+Mag $\ast$ scale Smallest scale is typically around 2.\+0, so window size is at least 40. \end{DoxyCompactList}\item 
+\#define {\bf I\+N\+I\+T\+S\+I\+G\+MA}~0.\+5
+\begin{DoxyCompactList}\small\item\em Sigma of base image -- See D.\+L. \end{DoxyCompactList}\item 
+\#define {\bf S\+I\+G\+MA}~1.\+6
+\begin{DoxyCompactList}\small\item\em Sigma of each octave -- See D.\+L. \end{DoxyCompactList}\item 
+\#define {\bf S\+C\+A\+L\+E\+S\+P\+E\+R\+O\+C\+T\+A\+VE}~3
+\begin{DoxyCompactList}\small\item\em Number of scales per octave. \end{DoxyCompactList}\item 
+\#define {\bf M\+A\+X\+O\+C\+T\+A\+V\+ES}~14
+\item 
+\#define {\bf D\+O\+U\+B\+L\+E\+\_\+\+B\+A\+S\+E\+\_\+\+I\+M\+A\+G\+E\+\_\+\+S\+I\+ZE}~1
+\begin{DoxyCompactList}\small\item\em Double image size before looking searching for keypoints Doubling finds more keypoints, but takes longer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf Normvec} (float $\ast$v, unsigned int len)
+\begin{DoxyCompactList}\small\item\em Normalizes a vector to unit length. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{keypoint.\+cc@{keypoint.\+cc}!D\+O\+U\+B\+L\+E\+\_\+\+B\+A\+S\+E\+\_\+\+I\+M\+A\+G\+E\+\_\+\+S\+I\+ZE@{D\+O\+U\+B\+L\+E\+\_\+\+B\+A\+S\+E\+\_\+\+I\+M\+A\+G\+E\+\_\+\+S\+I\+ZE}}
+\index{D\+O\+U\+B\+L\+E\+\_\+\+B\+A\+S\+E\+\_\+\+I\+M\+A\+G\+E\+\_\+\+S\+I\+ZE@{D\+O\+U\+B\+L\+E\+\_\+\+B\+A\+S\+E\+\_\+\+I\+M\+A\+G\+E\+\_\+\+S\+I\+ZE}!keypoint.\+cc@{keypoint.\+cc}}
+\subsubsection[{D\+O\+U\+B\+L\+E\+\_\+\+B\+A\+S\+E\+\_\+\+I\+M\+A\+G\+E\+\_\+\+S\+I\+ZE}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+O\+U\+B\+L\+E\+\_\+\+B\+A\+S\+E\+\_\+\+I\+M\+A\+G\+E\+\_\+\+S\+I\+ZE~1}\label{keypoint_8cc_a3d4ad87b7b96804d6c87b68ddf40819b}
+
+
+Double image size before looking searching for keypoints Doubling finds more keypoints, but takes longer. 
+
+See D.\+L.\textquotesingle{}s paper. 
+
+Referenced by Keypoint\+Detector\+::\+Recalc\+Key\+Indices(), Keypoint\+Detector\+::\+Scale\+Init\+Image(), Keypoint\+Detector\+::write\+Keys\+To\+File(), and Keypoint\+Detector\+::write\+Patches\+To\+File().
+
+\index{keypoint.\+cc@{keypoint.\+cc}!I\+N\+I\+T\+S\+I\+G\+MA@{I\+N\+I\+T\+S\+I\+G\+MA}}
+\index{I\+N\+I\+T\+S\+I\+G\+MA@{I\+N\+I\+T\+S\+I\+G\+MA}!keypoint.\+cc@{keypoint.\+cc}}
+\subsubsection[{I\+N\+I\+T\+S\+I\+G\+MA}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+N\+I\+T\+S\+I\+G\+MA~0.\+5}\label{keypoint_8cc_a7b004dcf13913bfcbc0fa79b715981e8}
+
+
+Sigma of base image -- See D.\+L. 
+
+\textquotesingle{}s paper. 
+
+Referenced by Keypoint\+Detector\+::\+Scale\+Init\+Image().
+
+\index{keypoint.\+cc@{keypoint.\+cc}!M\+A\+X\+O\+C\+T\+A\+V\+ES@{M\+A\+X\+O\+C\+T\+A\+V\+ES}}
+\index{M\+A\+X\+O\+C\+T\+A\+V\+ES@{M\+A\+X\+O\+C\+T\+A\+V\+ES}!keypoint.\+cc@{keypoint.\+cc}}
+\subsubsection[{M\+A\+X\+O\+C\+T\+A\+V\+ES}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+O\+C\+T\+A\+V\+ES~14}\label{keypoint_8cc_a75af18256418d1aac5eb12ef3bd95da9}
+
+
+Referenced by Keypoint\+Detector\+::\+Build\+Gaussian\+Octaves().
+
+\index{keypoint.\+cc@{keypoint.\+cc}!Patch\+Mag@{Patch\+Mag}}
+\index{Patch\+Mag@{Patch\+Mag}!keypoint.\+cc@{keypoint.\+cc}}
+\subsubsection[{Patch\+Mag}]{\setlength{\rightskip}{0pt plus 5cm}\#define Patch\+Mag~20}\label{keypoint_8cc_a6f9387aea91a9a6e82b61f89b5757c2f}
+
+
+\doxyref{Keypoint}{p.}{classKeypoint} window sample size is Patch\+Mag $\ast$ scale Smallest scale is typically around 2.\+0, so window size is at least 40. 
+
+
+
+Referenced by Keypoint\+Detector\+::\+Make\+Keypoint\+Patch(), and Keypoint\+Detector\+::\+Make\+Local\+Patch().
+
+\index{keypoint.\+cc@{keypoint.\+cc}!PI@{PI}}
+\index{PI@{PI}!keypoint.\+cc@{keypoint.\+cc}}
+\subsubsection[{PI}]{\setlength{\rightskip}{0pt plus 5cm}\#define PI~3.\+14159265358979323846}\label{keypoint_8cc_a598a3330b3c21701223ee0ca14316eca}
+\index{keypoint.\+cc@{keypoint.\+cc}!S\+C\+A\+L\+E\+S\+P\+E\+R\+O\+C\+T\+A\+VE@{S\+C\+A\+L\+E\+S\+P\+E\+R\+O\+C\+T\+A\+VE}}
+\index{S\+C\+A\+L\+E\+S\+P\+E\+R\+O\+C\+T\+A\+VE@{S\+C\+A\+L\+E\+S\+P\+E\+R\+O\+C\+T\+A\+VE}!keypoint.\+cc@{keypoint.\+cc}}
+\subsubsection[{S\+C\+A\+L\+E\+S\+P\+E\+R\+O\+C\+T\+A\+VE}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+C\+A\+L\+E\+S\+P\+E\+R\+O\+C\+T\+A\+VE~3}\label{keypoint_8cc_a100d3ea1033dee01a33d1957ab565c37}
+
+
+Number of scales per octave. 
+
+See D.\+L.\textquotesingle{}s paper. 
+
+Referenced by Keypoint\+Detector\+::\+Build\+Gaussian\+Octaves(), Keypoint\+Detector\+::\+Build\+Gaussian\+Scales(), Keypoint\+Detector\+::\+Make\+Keypoint\+Patch(), Keypoint\+Detector\+::\+Make\+Local\+Patch(), and Keypoint\+Detector\+::\+Recalc\+Key\+Indices().
+
+\index{keypoint.\+cc@{keypoint.\+cc}!S\+I\+G\+MA@{S\+I\+G\+MA}}
+\index{S\+I\+G\+MA@{S\+I\+G\+MA}!keypoint.\+cc@{keypoint.\+cc}}
+\subsubsection[{S\+I\+G\+MA}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+I\+G\+MA~1.\+6}\label{keypoint_8cc_ab899f53048f1f06a224b5eb1fa369750}
+
+
+Sigma of each octave -- See D.\+L. 
+
+\textquotesingle{}s paper. 
+
+Referenced by Keypoint\+Detector\+::\+Build\+Gaussian\+Scales(), Keypoint\+Detector\+::\+Make\+Keypoint\+Patch(), Keypoint\+Detector\+::\+Make\+Local\+Patch(), Keypoint\+Detector\+::\+Recalc\+Key\+Indices(), and Keypoint\+Detector\+::\+Scale\+Init\+Image().
+
+
+
+\subsection{Function Documentation}
+\index{keypoint.\+cc@{keypoint.\+cc}!Normvec@{Normvec}}
+\index{Normvec@{Normvec}!keypoint.\+cc@{keypoint.\+cc}}
+\subsubsection[{Normvec(float $\ast$v, unsigned int len)}]{\setlength{\rightskip}{0pt plus 5cm}void Normvec (
+\begin{DoxyParamCaption}
+\item[{float $\ast$}]{v, }
+\item[{unsigned int}]{len}
+\end{DoxyParamCaption}
+)}\label{keypoint_8cc_ad569c5b02a799bcb69b2eab308ffd0c1}
+
+
+Normalizes a vector to unit length. 
+
+Used for normalizing gradients of an image patch.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Vector to normalize. \\
+\hline
+\end{DoxyParams}
+
+
+Referenced by Keypoint\+Detector\+::\+Make\+Keypoint\+P\+C\+A(), and write\+Grads().
+

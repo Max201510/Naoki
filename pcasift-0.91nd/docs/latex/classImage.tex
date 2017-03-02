@@ -1,0 +1,438 @@
+\section{Image Class Reference}
+\label{classImage}\index{Image@{Image}}
+
+
+\doxyref{Image}{p.}{classImage} class.  
+
+
+
+
+{\ttfamily \#include $<$image.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Image} (int {\bf width}, int {\bf height})
+\begin{DoxyCompactList}\small\item\em Constructs new black image. \end{DoxyCompactList}\item 
+{\bf Image} (int {\bf width}, int {\bf height}, float $\ast$new\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Constructs new image with existing data. \end{DoxyCompactList}\item 
+{\bf Image} (const char $\ast$filename)
+\begin{DoxyCompactList}\small\item\em Constructs new image from file (P\+GM only). \end{DoxyCompactList}\item 
+{\bf $\sim$\+Image} ()
+\item 
+{\bf Image} $\ast$ {\bf clone} ()
+\begin{DoxyCompactList}\small\item\em Clones a copy of the image. \end{DoxyCompactList}\item 
+{\bf Image} $\ast$ {\bf half\+Size\+Image} ()
+\begin{DoxyCompactList}\small\item\em Returns a new image that\textquotesingle{}s half the size of the current image. \end{DoxyCompactList}\item 
+{\bf Image} $\ast$ {\bf double\+Size\+Image} ()
+\begin{DoxyCompactList}\small\item\em Returns a new image that\textquotesingle{}s double the size of the current image. \end{DoxyCompactList}\item 
+{\bf Image} $\ast$ {\bf double\+Size\+Image2} ()
+\begin{DoxyCompactList}\small\item\em Returns a new image that\textquotesingle{}s almost double the size of the current image. \end{DoxyCompactList}\item 
+void {\bf sub} ({\bf Image} $\ast$im2, {\bf Image} $\ast$dst)
+\begin{DoxyCompactList}\small\item\em Subtracts two images. \end{DoxyCompactList}\item 
+void {\bf write} (const char $\ast$filename)
+\begin{DoxyCompactList}\small\item\em Write image to a file (P\+GM only). \end{DoxyCompactList}\item 
+void {\bf set\+Pixel} (int x, int y, float val)
+\begin{DoxyCompactList}\small\item\em Sets pixel to a value. \end{DoxyCompactList}\item 
+float {\bf get\+Pixel} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Gets the value of a pixel at a location. \end{DoxyCompactList}\item 
+float {\bf get\+Pixel\+BI} (float x, float y)
+\begin{DoxyCompactList}\small\item\em Gets the value of a pixel at a location with bilinear interpolation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf width}
+\begin{DoxyCompactList}\small\item\em Width of image in pixels. \end{DoxyCompactList}\item 
+int {\bf height}
+\begin{DoxyCompactList}\small\item\em Height of image in pixels. \end{DoxyCompactList}\item 
+float $\ast$$\ast$ {\bf pix}
+\begin{DoxyCompactList}\small\item\em Storage of image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf new\+Image} (int {\bf width}, int {\bf height})
+\begin{DoxyCompactList}\small\item\em Allocates memory for new image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Image}{p.}{classImage} class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Image@{Image}!Image@{Image}}
+\index{Image@{Image}!Image@{Image}}
+\subsubsection[{Image(int width, int height)}]{\setlength{\rightskip}{0pt plus 5cm}Image\+::\+Image (
+\begin{DoxyParamCaption}
+\item[{int}]{width, }
+\item[{int}]{height}
+\end{DoxyParamCaption}
+)}\label{classImage_afb0339b802ed560e69eb07358d30198f}
+
+
+Constructs new black image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & width in pixels of new image \\
+\hline
+{\em height} & height in pixels of new image \\
+\hline
+\end{DoxyParams}
+
+
+References new\+Image().
+
+
+
+Referenced by Blur\+Image(), clone(), double\+Size\+Image(), double\+Size\+Image2(), and half\+Size\+Image().
+
+\index{Image@{Image}!Image@{Image}}
+\index{Image@{Image}!Image@{Image}}
+\subsubsection[{Image(int width, int height, float $\ast$new\+\_\+data)}]{\setlength{\rightskip}{0pt plus 5cm}Image\+::\+Image (
+\begin{DoxyParamCaption}
+\item[{int}]{width, }
+\item[{int}]{height, }
+\item[{float $\ast$}]{new\+\_\+data}
+\end{DoxyParamCaption}
+)}\label{classImage_a98bba36462bfef5f471524176e78f263}
+
+
+Constructs new image with existing data. 
+
+Copies new\+\_\+data into own data structure.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & width in pixels of new image \\
+\hline
+{\em height} & height in pixels of new image \\
+\hline
+{\em new\+\_\+data} & image data to copy. \\
+\hline
+\end{DoxyParams}
+
+
+References height, pix, and width.
+
+\index{Image@{Image}!Image@{Image}}
+\index{Image@{Image}!Image@{Image}}
+\subsubsection[{Image(const char $\ast$filename)}]{\setlength{\rightskip}{0pt plus 5cm}Image\+::\+Image (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{filename}
+\end{DoxyParamCaption}
+)}\label{classImage_a9700f58efb58b13e23666f19c67d3839}
+
+
+Constructs new image from file (P\+GM only). 
+
+
+
+References height, new\+Image(), pix, and width.
+
+\index{Image@{Image}!````~Image@{$\sim$\+Image}}
+\index{````~Image@{$\sim$\+Image}!Image@{Image}}
+\subsubsection[{$\sim$\+Image()}]{\setlength{\rightskip}{0pt plus 5cm}Image\+::$\sim$\+Image (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classImage_a0294f63700543e11c0f0da85601c7ae5}
+
+
+References pix.
+
+
+
+\subsection{Member Function Documentation}
+\index{Image@{Image}!clone@{clone}}
+\index{clone@{clone}!Image@{Image}}
+\subsubsection[{clone()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Image} $\ast$ Image\+::clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classImage_a0129977bafc6610b4b946f0e151182d7}
+
+
+Clones a copy of the image. 
+
+\begin{DoxyReturn}{Returns}
+Cloned copy. 
+\end{DoxyReturn}
+
+
+References height, Image(), pix, and width.
+
+
+
+Referenced by Keypoint\+Detector\+::\+Build\+Gaussian\+Octaves(), and Keypoint\+Detector\+::\+Build\+Gaussian\+Scales().
+
+\index{Image@{Image}!double\+Size\+Image@{double\+Size\+Image}}
+\index{double\+Size\+Image@{double\+Size\+Image}!Image@{Image}}
+\subsubsection[{double\+Size\+Image()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Image} $\ast$ Image\+::double\+Size\+Image (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classImage_a1c170ec3658448454fe5bb3ec0003f08}
+
+
+Returns a new image that\textquotesingle{}s double the size of the current image. 
+
+Does not antialiase in any way. \begin{DoxyReturn}{Returns}
+New double sized image 
+\end{DoxyReturn}
+
+
+References get\+Pixel(), height, Image(), set\+Pixel(), and width.
+
+\index{Image@{Image}!double\+Size\+Image2@{double\+Size\+Image2}}
+\index{double\+Size\+Image2@{double\+Size\+Image2}!Image@{Image}}
+\subsubsection[{double\+Size\+Image2()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Image} $\ast$ Image\+::double\+Size\+Image2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classImage_aaa327658346e1a71731eb3fb8b8a2b40}
+
+
+Returns a new image that\textquotesingle{}s almost double the size of the current image. 
+
+Bilinear interpolate between pixels \begin{DoxyReturn}{Returns}
+New double sized image 
+\end{DoxyReturn}
+
+
+References get\+Pixel(), height, Image(), set\+Pixel(), and width.
+
+
+
+Referenced by Keypoint\+Detector\+::\+Scale\+Init\+Image().
+
+\index{Image@{Image}!get\+Pixel@{get\+Pixel}}
+\index{get\+Pixel@{get\+Pixel}!Image@{Image}}
+\subsubsection[{get\+Pixel(int x, int y)}]{\setlength{\rightskip}{0pt plus 5cm}float Image\+::get\+Pixel (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\label{classImage_aaed19de8440c3ee51c3492eb37e262ca}
+
+
+Gets the value of a pixel at a location. 
+
+Does N\+OT check for bounds.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & x pixel location \\
+\hline
+{\em y} & y pixel location \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pixel value 
+\end{DoxyReturn}
+
+
+References height, pix, and width.
+
+
+
+Referenced by Convolve\+Loc\+Height(), Convolve\+Loc\+Width(), double\+Size\+Image(), double\+Size\+Image2(), half\+Size\+Image(), sub(), and write().
+
+\index{Image@{Image}!get\+Pixel\+BI@{get\+Pixel\+BI}}
+\index{get\+Pixel\+BI@{get\+Pixel\+BI}!Image@{Image}}
+\subsubsection[{get\+Pixel\+B\+I(float x, float y)}]{\setlength{\rightskip}{0pt plus 5cm}float Image\+::get\+Pixel\+BI (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)}\label{classImage_a887083a56f98b0790edc8651558a0e38}
+
+
+Gets the value of a pixel at a location with bilinear interpolation. 
+
+If location is out of bounds, then return value of closest pixel.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & x pixel location \\
+\hline
+{\em y} & y pixel location \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pixel value 
+\end{DoxyReturn}
+
+
+References height, pix, and width.
+
+
+
+Referenced by Keypoint\+Detector\+::\+Make\+Keypoint\+Patch(), and Keypoint\+Detector\+::\+Make\+Local\+Patch().
+
+\index{Image@{Image}!half\+Size\+Image@{half\+Size\+Image}}
+\index{half\+Size\+Image@{half\+Size\+Image}!Image@{Image}}
+\subsubsection[{half\+Size\+Image()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Image} $\ast$ Image\+::half\+Size\+Image (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classImage_aaa0ab1b0006568e8c6b7137c12961445}
+
+
+Returns a new image that\textquotesingle{}s half the size of the current image. 
+
+Rounds image sizes down. Does not antialiase in any way. \begin{DoxyReturn}{Returns}
+New half sized image 
+\end{DoxyReturn}
+
+
+References get\+Pixel(), height, Image(), set\+Pixel(), and width.
+
+
+
+Referenced by Keypoint\+Detector\+::\+Build\+Gaussian\+Octaves().
+
+\index{Image@{Image}!new\+Image@{new\+Image}}
+\index{new\+Image@{new\+Image}!Image@{Image}}
+\subsubsection[{new\+Image(int width, int height)}]{\setlength{\rightskip}{0pt plus 5cm}void Image\+::new\+Image (
+\begin{DoxyParamCaption}
+\item[{int}]{width, }
+\item[{int}]{height}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classImage_af9daafdeb92f645800eb0c31593ef329}
+
+
+Allocates memory for new image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & width in pixels of new image \\
+\hline
+{\em height} & height in pixels of new image \\
+\hline
+\end{DoxyParams}
+
+
+References height, pix, and width.
+
+
+
+Referenced by Image().
+
+\index{Image@{Image}!set\+Pixel@{set\+Pixel}}
+\index{set\+Pixel@{set\+Pixel}!Image@{Image}}
+\subsubsection[{set\+Pixel(int x, int y, float val)}]{\setlength{\rightskip}{0pt plus 5cm}void Image\+::set\+Pixel (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{float}]{val}
+\end{DoxyParamCaption}
+)}\label{classImage_a2c53eaa26302a0072689dc8497b6c1b1}
+
+
+Sets pixel to a value. 
+
+Does N\+OT check for bounds.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & x pixel location \\
+\hline
+{\em y} & y pixel location \\
+\hline
+{\em val} & Value to set. \\
+\hline
+\end{DoxyParams}
+
+
+References height, pix, and width.
+
+
+
+Referenced by Convolve1\+D\+Height(), Convolve1\+D\+Width(), double\+Size\+Image(), double\+Size\+Image2(), half\+Size\+Image(), Keypoint\+Detector\+::\+Make\+Keypoint\+Patch(), Keypoint\+Detector\+::\+Make\+Local\+Patch(), Keypoint\+Detector\+::read\+Patches\+From\+File(), and sub().
+
+\index{Image@{Image}!sub@{sub}}
+\index{sub@{sub}!Image@{Image}}
+\subsubsection[{sub(\+Image $\ast$im2, Image $\ast$dst)}]{\setlength{\rightskip}{0pt plus 5cm}void Image\+::sub (
+\begin{DoxyParamCaption}
+\item[{{\bf Image} $\ast$}]{im2, }
+\item[{{\bf Image} $\ast$}]{dst}
+\end{DoxyParamCaption}
+)}\label{classImage_ae3c80bcd415fe225a2a8097060072cfd}
+
+
+Subtracts two images. 
+
+dst = this\+\_\+image -\/ im2.
+
+
+\begin{DoxyParams}{Parameters}
+{\em im2} & \doxyref{Image}{p.}{classImage} to subtract \\
+\hline
+{\em dst} & Destination image. \\
+\hline
+\end{DoxyParams}
+
+
+References get\+Pixel(), height, set\+Pixel(), and width.
+
+\index{Image@{Image}!write@{write}}
+\index{write@{write}!Image@{Image}}
+\subsubsection[{write(const char $\ast$filename)}]{\setlength{\rightskip}{0pt plus 5cm}void Image\+::write (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{filename}
+\end{DoxyParamCaption}
+)}\label{classImage_ad893cdcd9a4743f46ba94581f0eee158}
+
+
+Write image to a file (P\+GM only). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & File name for output. \\
+\hline
+\end{DoxyParams}
+
+
+References get\+Pixel(), height, and width.
+
+
+
+\subsection{Member Data Documentation}
+\index{Image@{Image}!height@{height}}
+\index{height@{height}!Image@{Image}}
+\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}int Image\+::height}\label{classImage_a51df43db420c9c0b57536cb2dd36de5c}
+
+
+Height of image in pixels. 
+
+
+
+Referenced by Blur\+Image(), Keypoint\+Detector\+::\+Build\+Gaussian\+Octaves(), Keypoint\+Detector\+::\+Build\+Gaussian\+Scales(), clone(), Convolve1\+D\+Height(), Convolve1\+D\+Width(), Convolve\+Loc\+Height(), double\+Size\+Image(), double\+Size\+Image2(), get\+Pixel(), get\+Pixel\+B\+I(), half\+Size\+Image(), Image(), main(), new\+Image(), Keypoint\+Detector\+::\+Scale\+Init\+Image(), set\+Pixel(), sub(), and write().
+
+\index{Image@{Image}!pix@{pix}}
+\index{pix@{pix}!Image@{Image}}
+\subsubsection[{pix}]{\setlength{\rightskip}{0pt plus 5cm}float$\ast$$\ast$ Image\+::pix}\label{classImage_abc0ea5e8a8fd48f9fd7bf8de501726a3}
+
+
+Storage of image. 
+
+
+
+Referenced by clone(), get\+Pixel(), get\+Pixel\+B\+I(), Image(), new\+Image(), set\+Pixel(), and $\sim$\+Image().
+
+\index{Image@{Image}!width@{width}}
+\index{width@{width}!Image@{Image}}
+\subsubsection[{width}]{\setlength{\rightskip}{0pt plus 5cm}int Image\+::width}\label{classImage_ab8d12f635013c04159cd4d3d972bac88}
+
+
+Width of image in pixels. 
+
+
+
+Referenced by Blur\+Image(), Keypoint\+Detector\+::\+Build\+Gaussian\+Octaves(), Keypoint\+Detector\+::\+Build\+Gaussian\+Scales(), clone(), Convolve1\+D\+Height(), Convolve1\+D\+Width(), Convolve\+Loc\+Width(), double\+Size\+Image(), double\+Size\+Image2(), get\+Pixel(), get\+Pixel\+B\+I(), half\+Size\+Image(), Image(), main(), new\+Image(), Keypoint\+Detector\+::\+Scale\+Init\+Image(), set\+Pixel(), sub(), and write().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf image.\+h}\item 
+{\bf image.\+cc}\end{DoxyCompactItemize}

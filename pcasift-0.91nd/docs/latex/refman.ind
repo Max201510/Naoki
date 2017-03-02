@@ -1,0 +1,298 @@
+\begin{theindex}
+
+  \item {$\sim$\+Image}
+    \subitem {Image}, 7
+  \item {$\sim$\+Keypoint}
+    \subitem {Keypoint}, 11
+
+  \indexspace
+
+  \item {avgs}
+    \subitem {Keypoint\+Detector}, 19
+
+  \indexspace
+
+  \item {Blur\+Image}
+    \subitem {image.\+cc}, 23
+    \subitem {image.\+h}, 26
+  \item {Build\+Gaussian\+Octaves}
+    \subitem {Keypoint\+Detector}, 15
+  \item {Build\+Gaussian\+Scales}
+    \subitem {Keypoint\+Detector}, 15
+
+  \indexspace
+
+  \item {clone}
+    \subitem {Image}, 7
+  \item {Compute\+Local\+Descr}
+    \subitem {Keypoint\+Detector}, 15
+  \item {Compute\+Local\+Patches}
+    \subitem {Keypoint\+Detector}, 16
+  \item {Convolve1\+D\+Height}
+    \subitem {image.\+cc}, 23
+  \item {Convolve1\+D\+Width}
+    \subitem {image.\+cc}, 23
+  \item {Convolve\+Loc\+Height}
+    \subitem {image.\+cc}, 23
+  \item {Convolve\+Loc\+Width}
+    \subitem {image.\+cc}, 24
+
+  \indexspace
+
+  \item {D\+O\+U\+B\+L\+E\+\_\+\+B\+A\+S\+E\+\_\+\+I\+M\+A\+G\+E\+\_\+\+S\+I\+ZE}
+    \subitem {keypoint.\+cc}, 27
+  \item {double\+Size\+Image}
+    \subitem {Image}, 7
+  \item {double\+Size\+Image2}
+    \subitem {Image}, 7
+
+  \indexspace
+
+  \item {E\+P\+C\+A\+L\+EN}
+    \subitem {keypoint.\+h}, 29
+  \item {eigs}
+    \subitem {Keypoint\+Detector}, 19
+
+  \indexspace
+
+  \item {fscale}
+    \subitem {Keypoint}, 11
+
+  \indexspace
+
+  \item {G\+A\+U\+S\+S\+K\+E\+RN}
+    \subitem {image.\+cc}, 23
+  \item {G\+P\+L\+EN}
+    \subitem {keypoint.\+h}, 29
+  \item {gathergrads.\+cc}, 21
+    \subitem {main}, 21
+    \subitem {write\+Grads}, 21
+  \item {Gaussian\+Blur}
+    \subitem {image.\+h}, 26
+  \item {Gaussian\+Kernel1D}
+    \subitem {image.\+cc}, 24
+  \item {Gaussian\+Kernel2D}
+    \subitem {image.\+cc}, 25
+    \subitem {image.\+h}, 26
+  \item {get\+Patches}
+    \subitem {Keypoint\+Detector}, 16
+  \item {get\+Pixel}
+    \subitem {Image}, 7
+  \item {get\+Pixel\+BI}
+    \subitem {Image}, 8
+  \item {getpatches.\+cc}, 21
+    \subitem {main}, 22
+  \item {gpcavects.\+txt}, 22
+  \item {gscale}
+    \subitem {Keypoint}, 11
+
+  \indexspace
+
+  \item {half\+Size\+Image}
+    \subitem {Image}, 8
+  \item {height}
+    \subitem {Image}, 10
+
+  \indexspace
+
+  \item {I\+N\+I\+T\+S\+I\+G\+MA}
+    \subitem {keypoint.\+cc}, 27
+  \item {Image}, 5
+    \subitem {$\sim$\+Image}, 7
+    \subitem {clone}, 7
+    \subitem {double\+Size\+Image}, 7
+    \subitem {double\+Size\+Image2}, 7
+    \subitem {get\+Pixel}, 7
+    \subitem {get\+Pixel\+BI}, 8
+    \subitem {half\+Size\+Image}, 8
+    \subitem {height}, 10
+    \subitem {Image}, 6
+    \subitem {new\+Image}, 8
+    \subitem {pix}, 10
+    \subitem {set\+Pixel}, 9
+    \subitem {sub}, 9
+    \subitem {width}, 10
+    \subitem {write}, 9
+  \item {image.\+cc}, 22
+    \subitem {Blur\+Image}, 23
+    \subitem {Convolve1\+D\+Height}, 23
+    \subitem {Convolve1\+D\+Width}, 23
+    \subitem {Convolve\+Loc\+Height}, 23
+    \subitem {Convolve\+Loc\+Width}, 24
+    \subitem {G\+A\+U\+S\+S\+K\+E\+RN}, 23
+    \subitem {Gaussian\+Kernel1D}, 24
+    \subitem {Gaussian\+Kernel2D}, 25
+    \subitem {normalize\+Mat}, 25
+    \subitem {normalize\+Vec}, 25
+    \subitem {PI}, 23
+  \item {image.\+h}, 25
+    \subitem {Blur\+Image}, 26
+    \subitem {Gaussian\+Blur}, 26
+    \subitem {Gaussian\+Kernel2D}, 26
+
+  \indexspace
+
+  \item {Keypoint}, 10
+    \subitem {$\sim$\+Keypoint}, 11
+    \subitem {fscale}, 11
+    \subitem {gscale}, 11
+    \subitem {Keypoint}, 11
+    \subitem {ld}, 12
+    \subitem {octave}, 12
+    \subitem {ori}, 12
+    \subitem {patch}, 12
+    \subitem {scale}, 12
+    \subitem {sx}, 12
+    \subitem {sy}, 12
+    \subitem {x}, 13
+    \subitem {y}, 13
+  \item {keypoint.\+cc}, 27
+    \subitem {D\+O\+U\+B\+L\+E\+\_\+\+B\+A\+S\+E\+\_\+\+I\+M\+A\+G\+E\+\_\+\+S\+I\+ZE}, 
+		27
+    \subitem {I\+N\+I\+T\+S\+I\+G\+MA}, 27
+    \subitem {M\+A\+X\+O\+C\+T\+A\+V\+ES}, 27
+    \subitem {Normvec}, 28
+    \subitem {Patch\+Mag}, 28
+    \subitem {PI}, 28
+    \subitem {S\+C\+A\+L\+E\+S\+P\+E\+R\+O\+C\+T\+A\+VE}, 28
+    \subitem {S\+I\+G\+MA}, 28
+  \item {keypoint.\+h}, 29
+    \subitem {E\+P\+C\+A\+L\+EN}, 29
+    \subitem {G\+P\+L\+EN}, 29
+    \subitem {Normvec}, 30
+    \subitem {P\+C\+A\+L\+EN}, 30
+    \subitem {Patch\+Length}, 29
+    \subitem {Patch\+Size}, 30
+  \item {Keypoint\+Detector}, 13
+    \subitem {avgs}, 19
+    \subitem {Build\+Gaussian\+Octaves}, 15
+    \subitem {Build\+Gaussian\+Scales}, 15
+    \subitem {Compute\+Local\+Descr}, 15
+    \subitem {Compute\+Local\+Patches}, 16
+    \subitem {eigs}, 19
+    \subitem {get\+Patches}, 16
+    \subitem {Keypoint\+Detector}, 14
+    \subitem {Make\+Keypoint\+P\+CA}, 17
+    \subitem {Make\+Keypoint\+Patch}, 16
+    \subitem {Make\+Local\+Patch}, 17
+    \subitem {read\+Keys\+From\+File}, 17
+    \subitem {read\+Patches\+From\+File}, 17
+    \subitem {Recalc\+Key\+Indices}, 18
+    \subitem {Recalc\+Keys}, 18
+    \subitem {Scale\+Init\+Image}, 18
+    \subitem {write\+Keys\+To\+File}, 19
+    \subitem {write\+Patches\+To\+File}, 19
+
+  \indexspace
+
+  \item {ld}
+    \subitem {Keypoint}, 12
+
+  \indexspace
+
+  \item {M\+A\+X\+O\+C\+T\+A\+V\+ES}
+    \subitem {keypoint.\+cc}, 27
+  \item {main}
+    \subitem {gathergrads.\+cc}, 21
+    \subitem {getpatches.\+cc}, 22
+    \subitem {recalckeys.\+cc}, 31
+  \item {Make\+Keypoint\+P\+CA}
+    \subitem {Keypoint\+Detector}, 17
+  \item {Make\+Keypoint\+Patch}
+    \subitem {Keypoint\+Detector}, 16
+  \item {Make\+Local\+Patch}
+    \subitem {Keypoint\+Detector}, 17
+
+  \indexspace
+
+  \item {new\+Image}
+    \subitem {Image}, 8
+  \item {normalize\+Mat}
+    \subitem {image.\+cc}, 25
+  \item {normalize\+Vec}
+    \subitem {image.\+cc}, 25
+  \item {Normvec}
+    \subitem {keypoint.\+cc}, 28
+    \subitem {keypoint.\+h}, 30
+
+  \indexspace
+
+  \item {octave}
+    \subitem {Keypoint}, 12
+  \item {ori}
+    \subitem {Keypoint}, 12
+
+  \indexspace
+
+  \item {P\+C\+A\+L\+EN}
+    \subitem {keypoint.\+h}, 30
+  \item {patch}
+    \subitem {Keypoint}, 12
+  \item {Patch\+Length}
+    \subitem {keypoint.\+h}, 29
+  \item {Patch\+Mag}
+    \subitem {keypoint.\+cc}, 28
+  \item {Patch\+Size}
+    \subitem {keypoint.\+h}, 30
+  \item {PI}
+    \subitem {image.\+cc}, 23
+    \subitem {keypoint.\+cc}, 28
+  \item {pix}
+    \subitem {Image}, 10
+
+  \indexspace
+
+  \item {read\+Keys\+From\+File}
+    \subitem {Keypoint\+Detector}, 17
+  \item {read\+Patches\+From\+File}
+    \subitem {Keypoint\+Detector}, 17
+  \item {Recalc\+Key\+Indices}
+    \subitem {Keypoint\+Detector}, 18
+  \item {Recalc\+Keys}
+    \subitem {Keypoint\+Detector}, 18
+  \item {recalckeys.\+cc}, 30
+    \subitem {main}, 31
+
+  \indexspace
+
+  \item {S\+C\+A\+L\+E\+S\+P\+E\+R\+O\+C\+T\+A\+VE}
+    \subitem {keypoint.\+cc}, 28
+  \item {S\+I\+G\+MA}
+    \subitem {keypoint.\+cc}, 28
+  \item {scale}
+    \subitem {Keypoint}, 12
+  \item {Scale\+Init\+Image}
+    \subitem {Keypoint\+Detector}, 18
+  \item {set\+Pixel}
+    \subitem {Image}, 9
+  \item {sub}
+    \subitem {Image}, 9
+  \item {sx}
+    \subitem {Keypoint}, 12
+  \item {sy}
+    \subitem {Keypoint}, 12
+
+  \indexspace
+
+  \item {width}
+    \subitem {Image}, 10
+  \item {write}
+    \subitem {Image}, 9
+  \item {write\+Grads}
+    \subitem {gathergrads.\+cc}, 21
+  \item {write\+Keys\+To\+File}
+    \subitem {Keypoint\+Detector}, 19
+  \item {write\+Patches\+To\+File}
+    \subitem {Keypoint\+Detector}, 19
+
+  \indexspace
+
+  \item {x}
+    \subitem {Keypoint}, 13
+
+  \indexspace
+
+  \item {y}
+    \subitem {Keypoint}, 13
+
+\end{theindex}

@@ -1,0 +1,533 @@
+\section{Keypoint\+Detector Class Reference}
+\label{classKeypointDetector}\index{Keypoint\+Detector@{Keypoint\+Detector}}
+
+
+\doxyref{Keypoint}{p.}{classKeypoint} detector class.  
+
+
+
+
+{\ttfamily \#include $<$keypoint.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Keypoint\+Detector} (char $\ast$basisfile)
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxyref{Keypoint\+Detector}{p.}{classKeypointDetector} object. \end{DoxyCompactList}\item 
+void {\bf Recalc\+Keys} ({\bf Image} $\ast$image, vector$<$ {\bf Keypoint} $\ast$ $>$ \&keys)
+\begin{DoxyCompactList}\small\item\em Recalculates local descriptor of keys on the given image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf write\+Keys\+To\+File} (vector$<$ {\bf Keypoint} $\ast$ $>$ \&keys, char $\ast$fn)
+\begin{DoxyCompactList}\small\item\em Writes keypoints to a file. \end{DoxyCompactList}\item 
+static vector$<$ {\bf Keypoint} $\ast$ $>$ {\bf read\+Keys\+From\+File} (char $\ast$fn)
+\begin{DoxyCompactList}\small\item\em Read keys from a file. \end{DoxyCompactList}\item 
+static vector$<$ {\bf Keypoint} $\ast$ $>$ {\bf read\+Patches\+From\+File} (char $\ast$fn)
+\begin{DoxyCompactList}\small\item\em Read patches from a file. \end{DoxyCompactList}\item 
+static void {\bf get\+Patches} ({\bf Image} $\ast$im, vector$<$ {\bf Keypoint} $\ast$ $>$ \&keys, int patchsize)
+\begin{DoxyCompactList}\small\item\em Get image patch. \end{DoxyCompactList}\item 
+static void {\bf write\+Patches\+To\+File} (vector$<$ {\bf Keypoint} $\ast$ $>$ \&keys, char $\ast$fn, int patchsize)
+\begin{DoxyCompactList}\small\item\em Write patches to file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf Make\+Keypoint\+P\+CA} ({\bf Keypoint} $\ast$key, {\bf Image} $\ast$blur)
+\begin{DoxyCompactList}\small\item\em Computes the P\+CA local descriptor of a keypoint Stores local descriptor in keypoint ld. \end{DoxyCompactList}\item 
+void {\bf Make\+Keypoint\+Patch} ({\bf Keypoint} $\ast$key, {\bf Image} $\ast$blur, float v[{\bf G\+P\+L\+EN}])
+\begin{DoxyCompactList}\small\item\em Extracts the image gradient patch of a keypoint. \end{DoxyCompactList}\item 
+void {\bf Compute\+Local\+Descr} (vector$<$ {\bf Keypoint} $\ast$ $>$ \&kps, vector$<$ vector$<$ {\bf Image} $\ast$ $>$ $>$ \&L\+Octaves)
+\begin{DoxyCompactList}\small\item\em Computes the P\+CA local descriptor for keypoints. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf Image} $\ast$ {\bf Scale\+Init\+Image} ({\bf Image} $\ast$image)
+\begin{DoxyCompactList}\small\item\em Scales and blurs input image to make base image. \end{DoxyCompactList}\item 
+static vector$<$ vector$<$ {\bf Image} $\ast$ $>$ $>$ {\bf Build\+Gaussian\+Octaves} ({\bf Image} $\ast$image)
+\begin{DoxyCompactList}\small\item\em Given a base image, computes a gaussian pyramid. \end{DoxyCompactList}\item 
+static vector$<$ {\bf Image} $\ast$ $>$ {\bf Build\+Gaussian\+Scales} ({\bf Image} $\ast$image)
+\begin{DoxyCompactList}\small\item\em Given a base image, computes a gaussian pyramid for a particular octave. \end{DoxyCompactList}\item 
+static void {\bf Recalc\+Key\+Indices} (vector$<$ {\bf Keypoint} $\ast$ $>$ \&keys)
+\item 
+static void {\bf Make\+Local\+Patch} ({\bf Keypoint} $\ast$key, {\bf Image} $\ast$blur, int windowsize)
+\item 
+static void {\bf Compute\+Local\+Patches} (vector$<$ {\bf Keypoint} $\ast$ $>$ \&kps, vector$<$ vector$<$ {\bf Image} $\ast$ $>$ $>$ \&L\+Octaves, int patchsize)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float {\bf avgs} [{\bf G\+P\+L\+EN}]
+\begin{DoxyCompactList}\small\item\em average local descriptor value. Used in P\+CA. \end{DoxyCompactList}\item 
+float {\bf eigs} [{\bf E\+P\+C\+A\+L\+EN}][{\bf G\+P\+L\+EN}]
+\begin{DoxyCompactList}\small\item\em P\+CA basis vectors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Keypoint}{p.}{classKeypoint} detector class. 
+
+Finds keypoints using David Lowe\textquotesingle{}s S\+I\+FT algorithm. Computes local descriptors using P\+C\+A\+S\+I\+FT.
+
+Limiations\+: Does not fully implement Lowe\textquotesingle{}s S\+I\+FT algorithm. Does not interpolate in location and scale. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Keypoint\+Detector@{Keypoint\+Detector}!Keypoint\+Detector@{Keypoint\+Detector}}
+\index{Keypoint\+Detector@{Keypoint\+Detector}!Keypoint\+Detector@{Keypoint\+Detector}}
+\subsubsection[{Keypoint\+Detector(char $\ast$basisfile)}]{\setlength{\rightskip}{0pt plus 5cm}Keypoint\+Detector\+::\+Keypoint\+Detector (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{basisfile}
+\end{DoxyParamCaption}
+)}\label{classKeypointDetector_a2eed3f96e3724bed9fb52113aabdda23}
+
+
+Constructs a new \doxyref{Keypoint\+Detector}{p.}{classKeypointDetector} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em basisfile} & File name of the P\+CA basis vector file and averages. \\
+\hline
+\end{DoxyParams}
+
+
+References avgs, eigs, E\+P\+C\+A\+L\+EN, G\+P\+L\+EN, and P\+C\+A\+L\+EN.
+
+
+
+\subsection{Member Function Documentation}
+\index{Keypoint\+Detector@{Keypoint\+Detector}!Build\+Gaussian\+Octaves@{Build\+Gaussian\+Octaves}}
+\index{Build\+Gaussian\+Octaves@{Build\+Gaussian\+Octaves}!Keypoint\+Detector@{Keypoint\+Detector}}
+\subsubsection[{Build\+Gaussian\+Octaves(\+Image $\ast$image)}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ vector$<$ {\bf Image} $\ast$ $>$ $>$ Keypoint\+Detector\+::\+Build\+Gaussian\+Octaves (
+\begin{DoxyParamCaption}
+\item[{{\bf Image} $\ast$}]{image}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classKeypointDetector_a023f3cd99483044e8f75f72068946f0c}
+
+
+Given a base image, computes a gaussian pyramid. 
+
+Base image must be blurred and scaled appropriately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Base image for the bottom of the Gaussian pyramid. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of vector of \doxyref{Image}{p.}{classImage} $\ast$. Outside vector are the octaves. Inside vector are the scales of images. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxyref{Build\+Gaussian\+Scales()}{p.}{classKeypointDetector_a8fbe8f07fc9b4c06bab5e4741e625134} 
+
+Build\+D\+O\+G\+Octaves() 
+
+\doxyref{Scale\+Init\+Image()}{p.}{classKeypointDetector_abeda3167ab45c3a9db2b0610a4d3ec63} 
+\end{DoxySeeAlso}
+
+
+References Build\+Gaussian\+Scales(), Image\+::clone(), Image\+::half\+Size\+Image(), Image\+::height, M\+A\+X\+O\+C\+T\+A\+V\+ES, S\+C\+A\+L\+E\+S\+P\+E\+R\+O\+C\+T\+A\+VE, and Image\+::width.
+
+
+
+Referenced by get\+Patches(), and Recalc\+Keys().
+
+\index{Keypoint\+Detector@{Keypoint\+Detector}!Build\+Gaussian\+Scales@{Build\+Gaussian\+Scales}}
+\index{Build\+Gaussian\+Scales@{Build\+Gaussian\+Scales}!Keypoint\+Detector@{Keypoint\+Detector}}
+\subsubsection[{Build\+Gaussian\+Scales(\+Image $\ast$image)}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Image} $\ast$ $>$ Keypoint\+Detector\+::\+Build\+Gaussian\+Scales (
+\begin{DoxyParamCaption}
+\item[{{\bf Image} $\ast$}]{image}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classKeypointDetector_a8fbe8f07fc9b4c06bab5e4741e625134}
+
+
+Given a base image, computes a gaussian pyramid for a particular octave. 
+
+Number of scales in an octave based on S\+C\+A\+L\+E\+S\+P\+E\+R\+O\+C\+T\+A\+VE.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Base image for the bottom of this octave. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of \doxyref{Image}{p.}{classImage} $\ast$, the scales of this octave. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxyref{Build\+Gaussian\+Octaves()}{p.}{classKeypointDetector_a023f3cd99483044e8f75f72068946f0c} 
+\end{DoxySeeAlso}
+
+
+References Blur\+Image(), Image\+::clone(), Image\+::height, S\+C\+A\+L\+E\+S\+P\+E\+R\+O\+C\+T\+A\+VE, S\+I\+G\+MA, and Image\+::width.
+
+
+
+Referenced by Build\+Gaussian\+Octaves().
+
+\index{Keypoint\+Detector@{Keypoint\+Detector}!Compute\+Local\+Descr@{Compute\+Local\+Descr}}
+\index{Compute\+Local\+Descr@{Compute\+Local\+Descr}!Keypoint\+Detector@{Keypoint\+Detector}}
+\subsubsection[{Compute\+Local\+Descr(vector$<$ Keypoint $\ast$ $>$ \&kps, vector$<$ vector$<$ Image $\ast$ $>$ $>$ \&\+L\+Octaves)}]{\setlength{\rightskip}{0pt plus 5cm}void Keypoint\+Detector\+::\+Compute\+Local\+Descr (
+\begin{DoxyParamCaption}
+\item[{vector$<$ {\bf Keypoint} $\ast$ $>$ \&}]{kps, }
+\item[{vector$<$ vector$<$ {\bf Image} $\ast$ $>$ $>$ \&}]{L\+Octaves}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classKeypointDetector_a8095ea9cba2507b1c5ceb3b5d8ed26fb}
+
+
+Computes the P\+CA local descriptor for keypoints. 
+
+Stores local desciptor in the ld field of the \doxyref{Keypoint}{p.}{classKeypoint}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em kps} & Keypoints localized in space, scale, and orientation. \\
+\hline
+{\em L\+Octaves} & Gaussian pyramid. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxyref{Build\+Gaussian\+Octaves()}{p.}{classKeypointDetector_a023f3cd99483044e8f75f72068946f0c} 
+\end{DoxySeeAlso}
+
+
+References Make\+Keypoint\+P\+C\+A().
+
+
+
+Referenced by Recalc\+Keys().
+
+\index{Keypoint\+Detector@{Keypoint\+Detector}!Compute\+Local\+Patches@{Compute\+Local\+Patches}}
+\index{Compute\+Local\+Patches@{Compute\+Local\+Patches}!Keypoint\+Detector@{Keypoint\+Detector}}
+\subsubsection[{Compute\+Local\+Patches(vector$<$ Keypoint $\ast$ $>$ \&kps, vector$<$ vector$<$ Image $\ast$ $>$ $>$ \&\+L\+Octaves, int patchsize)}]{\setlength{\rightskip}{0pt plus 5cm}void Keypoint\+Detector\+::\+Compute\+Local\+Patches (
+\begin{DoxyParamCaption}
+\item[{vector$<$ {\bf Keypoint} $\ast$ $>$ \&}]{kps, }
+\item[{vector$<$ vector$<$ {\bf Image} $\ast$ $>$ $>$ \&}]{L\+Octaves, }
+\item[{int}]{patchsize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classKeypointDetector_a568a695860ea556e936c20c0ad029bcc}
+
+
+References Make\+Local\+Patch().
+
+
+
+Referenced by get\+Patches().
+
+\index{Keypoint\+Detector@{Keypoint\+Detector}!get\+Patches@{get\+Patches}}
+\index{get\+Patches@{get\+Patches}!Keypoint\+Detector@{Keypoint\+Detector}}
+\subsubsection[{get\+Patches(\+Image $\ast$im, vector$<$ Keypoint $\ast$ $>$ \&keys, int patchsize)}]{\setlength{\rightskip}{0pt plus 5cm}void Keypoint\+Detector\+::get\+Patches (
+\begin{DoxyParamCaption}
+\item[{{\bf Image} $\ast$}]{im, }
+\item[{vector$<$ {\bf Keypoint} $\ast$ $>$ \&}]{keys, }
+\item[{int}]{patchsize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classKeypointDetector_a602e74fb365e6af78cdee3bcf5dc1a9d}
+
+
+Get image patch. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & \doxyref{Image}{p.}{classImage} to calculate. \\
+\hline
+{\em keys} & Vector of keys with position already calculated. \\
+\hline
+{\em patchsize} & size of square patch in pixels. \\
+\hline
+\end{DoxyParams}
+
+
+References Build\+Gaussian\+Octaves(), Compute\+Local\+Patches(), Recalc\+Key\+Indices(), and Scale\+Init\+Image().
+
+
+
+Referenced by main().
+
+\index{Keypoint\+Detector@{Keypoint\+Detector}!Make\+Keypoint\+Patch@{Make\+Keypoint\+Patch}}
+\index{Make\+Keypoint\+Patch@{Make\+Keypoint\+Patch}!Keypoint\+Detector@{Keypoint\+Detector}}
+\subsubsection[{Make\+Keypoint\+Patch(\+Keypoint $\ast$key, Image $\ast$blur, float v[G\+P\+L\+EN])}]{\setlength{\rightskip}{0pt plus 5cm}void Keypoint\+Detector\+::\+Make\+Keypoint\+Patch (
+\begin{DoxyParamCaption}
+\item[{{\bf Keypoint} $\ast$}]{key, }
+\item[{{\bf Image} $\ast$}]{blur, }
+\item[{float}]{v[\+G\+P\+L\+E\+N]}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classKeypointDetector_abf404b8289f3965a4e8db039499d43f3}
+
+
+Extracts the image gradient patch of a keypoint. 
+
+Size of image patch determined by Patch\+Size. Gradient patch is 2 pixels smaller in each dimension. We compute the gradient in both the x and y direction.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & \doxyref{Keypoint}{p.}{classKeypoint} localized in space, scale, and orientation. \\
+\hline
+{\em blur} & Gaussian image closest in scale to the keypoint. \\
+\hline
+{\em v} & Return. Gradient patch flattened into one long vector. We store gx and gy interleaved. \\
+\hline
+\end{DoxyParams}
+
+
+References Keypoint\+::fscale, Image\+::get\+Pixel\+B\+I(), Keypoint\+::ori, Patch\+Mag, Patch\+Size, S\+C\+A\+L\+E\+S\+P\+E\+R\+O\+C\+T\+A\+VE, Image\+::set\+Pixel(), S\+I\+G\+MA, Keypoint\+::sx, and Keypoint\+::sy.
+
+
+
+Referenced by Make\+Keypoint\+P\+C\+A().
+
+\index{Keypoint\+Detector@{Keypoint\+Detector}!Make\+Keypoint\+P\+CA@{Make\+Keypoint\+P\+CA}}
+\index{Make\+Keypoint\+P\+CA@{Make\+Keypoint\+P\+CA}!Keypoint\+Detector@{Keypoint\+Detector}}
+\subsubsection[{Make\+Keypoint\+P\+C\+A(\+Keypoint $\ast$key, Image $\ast$blur)}]{\setlength{\rightskip}{0pt plus 5cm}void Keypoint\+Detector\+::\+Make\+Keypoint\+P\+CA (
+\begin{DoxyParamCaption}
+\item[{{\bf Keypoint} $\ast$}]{key, }
+\item[{{\bf Image} $\ast$}]{blur}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classKeypointDetector_a32d50a15a72c28edaeae5f7a8424a439}
+
+
+Computes the P\+CA local descriptor of a keypoint Stores local descriptor in keypoint ld. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & A keypoint localized in space, scale, and orientation. \\
+\hline
+{\em blur} & The Gaussian scale closest to the scale of the keypoint. \\
+\hline
+\end{DoxyParams}
+
+
+References avgs, eigs, E\+P\+C\+A\+L\+EN, G\+P\+L\+EN, Keypoint\+::ld, Make\+Keypoint\+Patch(), and Normvec().
+
+
+
+Referenced by Compute\+Local\+Descr().
+
+\index{Keypoint\+Detector@{Keypoint\+Detector}!Make\+Local\+Patch@{Make\+Local\+Patch}}
+\index{Make\+Local\+Patch@{Make\+Local\+Patch}!Keypoint\+Detector@{Keypoint\+Detector}}
+\subsubsection[{Make\+Local\+Patch(\+Keypoint $\ast$key, Image $\ast$blur, int windowsize)}]{\setlength{\rightskip}{0pt plus 5cm}void Keypoint\+Detector\+::\+Make\+Local\+Patch (
+\begin{DoxyParamCaption}
+\item[{{\bf Keypoint} $\ast$}]{key, }
+\item[{{\bf Image} $\ast$}]{blur, }
+\item[{int}]{windowsize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classKeypointDetector_abd63c7efae9813410b4f79dfdedb37cf}
+
+
+References Keypoint\+::fscale, Image\+::get\+Pixel\+B\+I(), Keypoint\+::ori, Keypoint\+::patch, Patch\+Mag, Patch\+Size, S\+C\+A\+L\+E\+S\+P\+E\+R\+O\+C\+T\+A\+VE, Image\+::set\+Pixel(), S\+I\+G\+MA, Keypoint\+::sx, and Keypoint\+::sy.
+
+
+
+Referenced by Compute\+Local\+Patches().
+
+\index{Keypoint\+Detector@{Keypoint\+Detector}!read\+Keys\+From\+File@{read\+Keys\+From\+File}}
+\index{read\+Keys\+From\+File@{read\+Keys\+From\+File}!Keypoint\+Detector@{Keypoint\+Detector}}
+\subsubsection[{read\+Keys\+From\+File(char $\ast$fn)}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Keypoint} $\ast$ $>$ Keypoint\+Detector\+::read\+Keys\+From\+File (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{fn}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classKeypointDetector_a3578341af349cc486f8264df37b14aa7}
+
+
+Read keys from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fn} & File name of input. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of keys. 
+\end{DoxyReturn}
+
+
+References Keypoint\+::gscale, Keypoint\+::ld, Keypoint\+::ori, Keypoint\+::x, and Keypoint\+::y.
+
+
+
+Referenced by main().
+
+\index{Keypoint\+Detector@{Keypoint\+Detector}!read\+Patches\+From\+File@{read\+Patches\+From\+File}}
+\index{read\+Patches\+From\+File@{read\+Patches\+From\+File}!Keypoint\+Detector@{Keypoint\+Detector}}
+\subsubsection[{read\+Patches\+From\+File(char $\ast$fn)}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Keypoint} $\ast$ $>$ Keypoint\+Detector\+::read\+Patches\+From\+File (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{fn}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classKeypointDetector_a8486f5355dc924f43659a3d36dc0c133}
+
+
+Read patches from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fn} & File name of input. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of keys. 
+\end{DoxyReturn}
+
+
+References Keypoint\+::gscale, Keypoint\+::ori, Keypoint\+::patch, Image\+::set\+Pixel(), Keypoint\+::x, and Keypoint\+::y.
+
+
+
+Referenced by main().
+
+\index{Keypoint\+Detector@{Keypoint\+Detector}!Recalc\+Key\+Indices@{Recalc\+Key\+Indices}}
+\index{Recalc\+Key\+Indices@{Recalc\+Key\+Indices}!Keypoint\+Detector@{Keypoint\+Detector}}
+\subsubsection[{Recalc\+Key\+Indices(vector$<$ Keypoint $\ast$ $>$ \&keys)}]{\setlength{\rightskip}{0pt plus 5cm}void Keypoint\+Detector\+::\+Recalc\+Key\+Indices (
+\begin{DoxyParamCaption}
+\item[{vector$<$ {\bf Keypoint} $\ast$ $>$ \&}]{keys}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classKeypointDetector_a55e0679dcd90e0e2337fd800788d8c5d}
+
+
+References D\+O\+U\+B\+L\+E\+\_\+\+B\+A\+S\+E\+\_\+\+I\+M\+A\+G\+E\+\_\+\+S\+I\+ZE, Keypoint\+::fscale, Keypoint\+::gscale, Keypoint\+::octave, Keypoint\+::scale, S\+C\+A\+L\+E\+S\+P\+E\+R\+O\+C\+T\+A\+VE, S\+I\+G\+MA, Keypoint\+::sx, Keypoint\+::sy, Keypoint\+::x, and Keypoint\+::y.
+
+
+
+Referenced by get\+Patches(), and Recalc\+Keys().
+
+\index{Keypoint\+Detector@{Keypoint\+Detector}!Recalc\+Keys@{Recalc\+Keys}}
+\index{Recalc\+Keys@{Recalc\+Keys}!Keypoint\+Detector@{Keypoint\+Detector}}
+\subsubsection[{Recalc\+Keys(\+Image $\ast$image, vector$<$ Keypoint $\ast$ $>$ \&keys)}]{\setlength{\rightskip}{0pt plus 5cm}void Keypoint\+Detector\+::\+Recalc\+Keys (
+\begin{DoxyParamCaption}
+\item[{{\bf Image} $\ast$}]{image, }
+\item[{vector$<$ {\bf Keypoint} $\ast$ $>$ \&}]{keys}
+\end{DoxyParamCaption}
+)}\label{classKeypointDetector_affcae07ce54527a1bcc124bde749dc11}
+
+
+Recalculates local descriptor of keys on the given image. 
+
+Given localized keys, calculate local descriptor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & \doxyref{Image}{p.}{classImage} to calculate. \\
+\hline
+{\em keys} & Vector of keys with position already calculated. \\
+\hline
+\end{DoxyParams}
+
+
+References Build\+Gaussian\+Octaves(), Compute\+Local\+Descr(), Recalc\+Key\+Indices(), and Scale\+Init\+Image().
+
+
+
+Referenced by main().
+
+\index{Keypoint\+Detector@{Keypoint\+Detector}!Scale\+Init\+Image@{Scale\+Init\+Image}}
+\index{Scale\+Init\+Image@{Scale\+Init\+Image}!Keypoint\+Detector@{Keypoint\+Detector}}
+\subsubsection[{Scale\+Init\+Image(\+Image $\ast$image)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Image} $\ast$ Keypoint\+Detector\+::\+Scale\+Init\+Image (
+\begin{DoxyParamCaption}
+\item[{{\bf Image} $\ast$}]{image}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classKeypointDetector_abeda3167ab45c3a9db2b0610a4d3ec63}
+
+
+Scales and blurs input image to make base image. 
+
+Possibly doubles image size, based on D\+O\+U\+B\+L\+E\+\_\+\+B\+A\+S\+E\+\_\+\+I\+M\+A\+G\+E\+\_\+\+S\+I\+ZE. Blur image based on difference of S\+I\+G\+MA and I\+N\+I\+T\+S\+I\+G\+MA.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Raw image to find keypoints on. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Base image for the bottom of the Gaussian pyramid. 
+\end{DoxyReturn}
+
+
+References Blur\+Image(), D\+O\+U\+B\+L\+E\+\_\+\+B\+A\+S\+E\+\_\+\+I\+M\+A\+G\+E\+\_\+\+S\+I\+ZE, Image\+::double\+Size\+Image2(), Image\+::height, I\+N\+I\+T\+S\+I\+G\+MA, S\+I\+G\+MA, and Image\+::width.
+
+
+
+Referenced by get\+Patches(), and Recalc\+Keys().
+
+\index{Keypoint\+Detector@{Keypoint\+Detector}!write\+Keys\+To\+File@{write\+Keys\+To\+File}}
+\index{write\+Keys\+To\+File@{write\+Keys\+To\+File}!Keypoint\+Detector@{Keypoint\+Detector}}
+\subsubsection[{write\+Keys\+To\+File(vector$<$ Keypoint $\ast$ $>$ \&keys, char $\ast$fn)}]{\setlength{\rightskip}{0pt plus 5cm}void Keypoint\+Detector\+::write\+Keys\+To\+File (
+\begin{DoxyParamCaption}
+\item[{vector$<$ {\bf Keypoint} $\ast$ $>$ \&}]{keys, }
+\item[{char $\ast$}]{fn}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classKeypointDetector_aabf56fff7597ee4f46c08672b511b6f8}
+
+
+Writes keypoints to a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em keys} & Keypoints to be written. \\
+\hline
+{\em fn} & File name of output. \\
+\hline
+\end{DoxyParams}
+
+
+References D\+O\+U\+B\+L\+E\+\_\+\+B\+A\+S\+E\+\_\+\+I\+M\+A\+G\+E\+\_\+\+S\+I\+ZE, and E\+P\+C\+A\+L\+EN.
+
+
+
+Referenced by main().
+
+\index{Keypoint\+Detector@{Keypoint\+Detector}!write\+Patches\+To\+File@{write\+Patches\+To\+File}}
+\index{write\+Patches\+To\+File@{write\+Patches\+To\+File}!Keypoint\+Detector@{Keypoint\+Detector}}
+\subsubsection[{write\+Patches\+To\+File(vector$<$ Keypoint $\ast$ $>$ \&keys, char $\ast$fn, int patchsize)}]{\setlength{\rightskip}{0pt plus 5cm}void Keypoint\+Detector\+::write\+Patches\+To\+File (
+\begin{DoxyParamCaption}
+\item[{vector$<$ {\bf Keypoint} $\ast$ $>$ \&}]{keys, }
+\item[{char $\ast$}]{fn, }
+\item[{int}]{patchsize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classKeypointDetector_a9d50508ec2f669871f533aaf89679983}
+
+
+Write patches to file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em keys} & Keypoints to be written. \\
+\hline
+{\em fn} & File name of output. \\
+\hline
+{\em patchsize} & size of square patch in pixels. \\
+\hline
+\end{DoxyParams}
+
+
+References D\+O\+U\+B\+L\+E\+\_\+\+B\+A\+S\+E\+\_\+\+I\+M\+A\+G\+E\+\_\+\+S\+I\+ZE.
+
+
+
+Referenced by main().
+
+
+
+\subsection{Member Data Documentation}
+\index{Keypoint\+Detector@{Keypoint\+Detector}!avgs@{avgs}}
+\index{avgs@{avgs}!Keypoint\+Detector@{Keypoint\+Detector}}
+\subsubsection[{avgs}]{\setlength{\rightskip}{0pt plus 5cm}float Keypoint\+Detector\+::avgs[{\bf G\+P\+L\+EN}]\hspace{0.3cm}{\ttfamily [private]}}\label{classKeypointDetector_adc5dc198746e1d4b21d3aeeb8481a638}
+
+
+average local descriptor value. Used in P\+CA. 
+
+
+
+Referenced by Keypoint\+Detector(), and Make\+Keypoint\+P\+C\+A().
+
+\index{Keypoint\+Detector@{Keypoint\+Detector}!eigs@{eigs}}
+\index{eigs@{eigs}!Keypoint\+Detector@{Keypoint\+Detector}}
+\subsubsection[{eigs}]{\setlength{\rightskip}{0pt plus 5cm}float Keypoint\+Detector\+::eigs[{\bf E\+P\+C\+A\+L\+EN}][{\bf G\+P\+L\+EN}]\hspace{0.3cm}{\ttfamily [private]}}\label{classKeypointDetector_a6b382cb46b71242fd11eb79700afe095}
+
+
+P\+CA basis vectors. 
+
+
+
+Referenced by Keypoint\+Detector(), and Make\+Keypoint\+P\+C\+A().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf keypoint.\+h}\item 
+{\bf keypoint.\+cc}\end{DoxyCompactItemize}

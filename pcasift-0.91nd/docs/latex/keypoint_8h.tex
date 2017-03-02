@@ -1,0 +1,101 @@
+\section{keypoint.\+h File Reference}
+\label{keypoint_8h}\index{keypoint.\+h@{keypoint.\+h}}
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include \char`\"{}image.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Keypoint}
+\begin{DoxyCompactList}\small\item\em Class for one keypoint. \end{DoxyCompactList}\item 
+class {\bf Keypoint\+Detector}
+\begin{DoxyCompactList}\small\item\em \doxyref{Keypoint}{p.}{classKeypoint} detector class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf P\+C\+A\+L\+EN}~36
+\begin{DoxyCompactList}\small\item\em Number of components in P\+CA basis vector (in input file). \end{DoxyCompactList}\item 
+\#define {\bf E\+P\+C\+A\+L\+EN}~36
+\item 
+\#define {\bf Patch\+Size}~41
+\begin{DoxyCompactList}\small\item\em Window size of image patch for keypoint. \end{DoxyCompactList}\item 
+\#define {\bf Patch\+Length}~({\bf Patch\+Size} $\ast$ {\bf Patch\+Size})
+\item 
+\#define {\bf G\+P\+L\+EN}~(({\bf Patch\+Size} -\/ 2) $\ast$ ({\bf Patch\+Size} -\/ 2) $\ast$ 2)
+\begin{DoxyCompactList}\small\item\em Length one element gradient basis vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf Normvec} (float $\ast$v, unsigned int len)
+\begin{DoxyCompactList}\small\item\em Normalizes a vector to unit length. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{keypoint.\+h@{keypoint.\+h}!E\+P\+C\+A\+L\+EN@{E\+P\+C\+A\+L\+EN}}
+\index{E\+P\+C\+A\+L\+EN@{E\+P\+C\+A\+L\+EN}!keypoint.\+h@{keypoint.\+h}}
+\subsubsection[{E\+P\+C\+A\+L\+EN}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+P\+C\+A\+L\+EN~36}\label{keypoint_8h_a09bc90c174ca1a21678b3d6aa18d4e09}
+
+
+Referenced by Keypoint\+Detector\+::\+Keypoint\+Detector(), Keypoint\+Detector\+::\+Make\+Keypoint\+P\+C\+A(), and Keypoint\+Detector\+::write\+Keys\+To\+File().
+
+\index{keypoint.\+h@{keypoint.\+h}!G\+P\+L\+EN@{G\+P\+L\+EN}}
+\index{G\+P\+L\+EN@{G\+P\+L\+EN}!keypoint.\+h@{keypoint.\+h}}
+\subsubsection[{G\+P\+L\+EN}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+P\+L\+EN~(({\bf Patch\+Size} -\/ 2) $\ast$ ({\bf Patch\+Size} -\/ 2) $\ast$ 2)}\label{keypoint_8h_a77cf0272333f51b82dd4e7816c261c98}
+
+
+Length one element gradient basis vector. 
+
+
+
+Referenced by Keypoint\+Detector\+::\+Keypoint\+Detector(), and Keypoint\+Detector\+::\+Make\+Keypoint\+P\+C\+A().
+
+\index{keypoint.\+h@{keypoint.\+h}!Patch\+Length@{Patch\+Length}}
+\index{Patch\+Length@{Patch\+Length}!keypoint.\+h@{keypoint.\+h}}
+\subsubsection[{Patch\+Length}]{\setlength{\rightskip}{0pt plus 5cm}\#define Patch\+Length~({\bf Patch\+Size} $\ast$ {\bf Patch\+Size})}\label{keypoint_8h_af7f42fb75685148dd82e5ff70bd3860b}
+\index{keypoint.\+h@{keypoint.\+h}!Patch\+Size@{Patch\+Size}}
+\index{Patch\+Size@{Patch\+Size}!keypoint.\+h@{keypoint.\+h}}
+\subsubsection[{Patch\+Size}]{\setlength{\rightskip}{0pt plus 5cm}\#define Patch\+Size~41}\label{keypoint_8h_a59c418ce9de2bf1831e0df227f3201f8}
+
+
+Window size of image patch for keypoint. 
+
+Patch\+Size must be odd Must be 41 because the P\+CA basis vectors were trained on this size. Changing this requires retraining. If the window size of image is larger, than that window is resized to this size. 
+
+Referenced by Keypoint\+Detector\+::\+Make\+Keypoint\+Patch(), and Keypoint\+Detector\+::\+Make\+Local\+Patch().
+
+\index{keypoint.\+h@{keypoint.\+h}!P\+C\+A\+L\+EN@{P\+C\+A\+L\+EN}}
+\index{P\+C\+A\+L\+EN@{P\+C\+A\+L\+EN}!keypoint.\+h@{keypoint.\+h}}
+\subsubsection[{P\+C\+A\+L\+EN}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+C\+A\+L\+EN~36}\label{keypoint_8h_abf0b4ac7f66e764a9f1e833b94774a14}
+
+
+Number of components in P\+CA basis vector (in input file). 
+
+This is always 36, or else needs retraining. 
+
+Referenced by Keypoint\+Detector\+::\+Keypoint\+Detector().
+
+
+
+\subsection{Function Documentation}
+\index{keypoint.\+h@{keypoint.\+h}!Normvec@{Normvec}}
+\index{Normvec@{Normvec}!keypoint.\+h@{keypoint.\+h}}
+\subsubsection[{Normvec(float $\ast$v, unsigned int len)}]{\setlength{\rightskip}{0pt plus 5cm}void Normvec (
+\begin{DoxyParamCaption}
+\item[{float $\ast$}]{v, }
+\item[{unsigned int}]{len}
+\end{DoxyParamCaption}
+)}\label{keypoint_8h_ad569c5b02a799bcb69b2eab308ffd0c1}
+
+
+Normalizes a vector to unit length. 
+
+Used for normalizing gradients of an image patch.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Vector to normalize. \\
+\hline
+\end{DoxyParams}
+
+
+Referenced by Keypoint\+Detector\+::\+Make\+Keypoint\+P\+C\+A(), and write\+Grads().
+

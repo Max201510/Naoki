@@ -1,0 +1,81 @@
+\section{image.\+h File Reference}
+\label{image_8h}\index{image.\+h@{image.\+h}}
+{\ttfamily \#include $<$vector$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Image}
+\begin{DoxyCompactList}\small\item\em \doxyref{Image}{p.}{classImage} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf Blur\+Image} ({\bf Image} $\ast$src, {\bf Image} $\ast$dst, float sigma)
+\begin{DoxyCompactList}\small\item\em Does Gaussian smoothing of an image. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ float $>$ $>$ {\bf Gaussian\+Kernel2D} (float sigma)
+\begin{DoxyCompactList}\small\item\em Calculates a 2D Gaussian kernel. \end{DoxyCompactList}\item 
+void {\bf Gaussian\+Blur} ({\bf Image} $\ast$image, float sigma)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{image.\+h@{image.\+h}!Blur\+Image@{Blur\+Image}}
+\index{Blur\+Image@{Blur\+Image}!image.\+h@{image.\+h}}
+\subsubsection[{Blur\+Image(\+Image $\ast$src, Image $\ast$dst, float sigma)}]{\setlength{\rightskip}{0pt plus 5cm}void Blur\+Image (
+\begin{DoxyParamCaption}
+\item[{{\bf Image} $\ast$}]{src, }
+\item[{{\bf Image} $\ast$}]{dst, }
+\item[{float}]{sigma}
+\end{DoxyParamCaption}
+)}\label{image_8h_a0d1d95943d2efdab976024608da7614a}
+
+
+Does Gaussian smoothing of an image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Source image \\
+\hline
+{\em dst} & Destination image \\
+\hline
+{\em sigma} & Sigma of Gaussian weighting function. \\
+\hline
+\end{DoxyParams}
+
+
+References Convolve1\+D\+Height(), Convolve1\+D\+Width(), Gaussian\+Kernel1\+D(), Image\+::height, Image\+::\+Image(), and Image\+::width.
+
+
+
+Referenced by Keypoint\+Detector\+::\+Build\+Gaussian\+Scales(), and Keypoint\+Detector\+::\+Scale\+Init\+Image().
+
+\index{image.\+h@{image.\+h}!Gaussian\+Blur@{Gaussian\+Blur}}
+\index{Gaussian\+Blur@{Gaussian\+Blur}!image.\+h@{image.\+h}}
+\subsubsection[{Gaussian\+Blur(\+Image $\ast$image, float sigma)}]{\setlength{\rightskip}{0pt plus 5cm}void Gaussian\+Blur (
+\begin{DoxyParamCaption}
+\item[{{\bf Image} $\ast$}]{image, }
+\item[{float}]{sigma}
+\end{DoxyParamCaption}
+)}\label{image_8h_ab19ffe1b61bff67b3c3b9b95925d5774}
+\index{image.\+h@{image.\+h}!Gaussian\+Kernel2D@{Gaussian\+Kernel2D}}
+\index{Gaussian\+Kernel2D@{Gaussian\+Kernel2D}!image.\+h@{image.\+h}}
+\subsubsection[{Gaussian\+Kernel2\+D(float sigma)}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$vector$<$float$>$ $>$ Gaussian\+Kernel2D (
+\begin{DoxyParamCaption}
+\item[{float}]{sigma}
+\end{DoxyParamCaption}
+)}\label{image_8h_a1edce0455a8cf1735d4446d7a7281420}
+
+
+Calculates a 2D Gaussian kernel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sigma} & Sigma of Gaussian weighting function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+2D matrix of kernel. 
+\end{DoxyReturn}
+
+
+References G\+A\+U\+S\+S\+K\+E\+RN, normalize\+Mat(), and PI.
+
