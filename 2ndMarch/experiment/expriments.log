@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.8.13)  3 MAR 2017 08:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.8.13)  3 MAR 2017 09:22
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -681,15 +681,15 @@ n input line 110.
 
 [3]
 
-LaTeX Warning: Citation `rs2051217' on page 4 undefined on input line 218.
+LaTeX Warning: Citation `rs2051217' on page 4 undefined on input line 143.
 
 
 LaTeX Warning: Citation `Zhou:2014:EDO:2628707.2628786' on page 4 undefined on 
-input line 231.
+input line 156.
 
 [4]
 
-LaTeX Warning: Citation `rs2051217' on page 5 undefined on input line 261.
+LaTeX Warning: Citation `rs2051217' on page 5 undefined on input line 186.
 
 [5] [6] (./expriments.aux)
 
@@ -703,7 +703,7 @@ Here is how much of TeX's memory you used:
  17213 multiletter control sequences out of 15000+600000
  7502 words of font info for 29 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,12n,80p,1099b,607s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,12n,80p,840b,607s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
