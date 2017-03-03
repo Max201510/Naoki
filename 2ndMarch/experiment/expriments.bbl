@@ -1,0 +1,48 @@
+\begin{thebibliography}{1}
+
+\bibitem{DBLP:conf/sigmod/ShenZH05}
+H.~T. Shen, B.~C. Ooi, and X.~Zhou, ``Towards effective indexing for very large
+  video sequence database,'' in {\em SIGMOD}, pp.~730--741, 2005.
+
+\bibitem{DBLP:journals/tkde/ZhouZCSBT10}
+X.~Zhou, X.~Zhou, L.~Chen, Y.~Shu, A.~Bouguettaya, and J.~A. Taylor, ``Adaptive
+  subspace symbolization for content-based video detection,'' {\em {IEEE}
+  Trans. Knowl. Data Eng.}, vol.~22, no.~10, pp.~1372--1387, 2010.
+
+\bibitem{DBLP:conf/sigmod/ZhouCZCHW15}
+X.~Zhou, L.~Chen, Y.~Zhang, L.~Cao, G.~Huang, and C.~Wang, ``Online video
+  recommendation in sharing community,'' in {\em Proceedings of the 2015 {ACM}
+  {SIGMOD} International Conference on Management of Data, Melbourne, Victoria,
+  Australia, May 31 - June 4, 2015}, pp.~1645--1656, 2015.
+
+\bibitem{MartínezFE14}
+V.~G. Martínez, F.~H. Álvarez, and L.~H. Encinas, ``State of the art in
+  similarity preserving hashing functions,'' in {\em SAM}, pp.~139--145, 2014.
+
+\bibitem{DBLP:journals/tmm/ZhaoNTW07}
+W.~Zhao, C.~Ngo, H.~Tan, and X.~Wu, ``Near-duplicate keyframe identification
+  with interest point matching and pattern learning,'' {\em {IEEE} Trans.
+  Multimedia}, vol.~9, no.~5, pp.~1037--1048, 2007.
+
+\bibitem{turker2008building}
+M.~Turker and E.~Sumer, ``Building-based damage detection due to earthquake
+  using the watershed segmentation of the post-event aerial images,'' {\em
+  International Journal of Remote Sensing}, vol.~29, no.~11, pp.~3073--3089,
+  2008.
+
+\bibitem{rs2051217}
+L.~Matikainen, J.~Hyyppä, E.~Ahokas, L.~Markelin, and H.~Kaartinen,
+  ``Automatic detection of buildings and changes in buildings for updating of
+  maps,'' {\em Remote Sensing}, vol.~2, no.~5, pp.~1217--1248, 2010.
+
+\bibitem{Berndt:1994:UDT:3000850.3000887}
+D.~J. Berndt and J.~Clifford, ``Using dynamic time warping to find patterns in
+  time series,'' in {\em Proceedings of the 3rd International Conference on
+  Knowledge Discovery and Data Mining}, AAAIWS'94, pp.~359--370, AAAI Press,
+  1994.
+
+\bibitem{Zhou:2014:EDO:2628707.2628786}
+X.~Zhou and L.~Chen, ``Event detection over twitter social media streams,''
+  {\em The VLDB Journal}, vol.~23, pp.~381--400, June 2014.
+
+\end{thebibliography}

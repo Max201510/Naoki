@@ -140,7 +140,7 @@ We answer this by investigate the efficiency of the SIS-based clustering models,
 the effect of cluster numbers with different types of clustering techniques,
 and the effect of hash index. 
 \item How effective and efficient of the proposed boundary-based change detection method (\emph{BBCD})?
-We compare \emph{BBCD} with existing state-of-the-art algorithms, the shape base change detection(\textit{SBCD})~\cite{rs2051217}. 
+We compare \emph{BBCD} with existing state-of-the-art algorithms, the shape base change detection (\textit{SBCD})~\cite{rs2051217}. 
 \end{itemize}
 \subsection{Experimental Setup}
 The dataset we experimented with is collected from Flickr by focusing on images relevant to the \textit{Nepal earthquake}, which is also known as \textit{Gorkha earthquake}, in 2015.
@@ -149,7 +149,8 @@ The ground-truth is manually identified by the authors of this paper via careful
 Specifically, for a \emph{ground-truth}, both \emph{before} and \emph{after} image have to contain at least one same building, but the corresponding image contents, angles, resolutions, colours and light effects could be different. 
 This would allow the proposed method to analyse whether the before and the after images are taken in the same location and building. 
 
-We conduct the efficiency experiments on 10000 after and before the earthquake images and their features. 4000 after and before the earthquake images are collected for the effectiveness experiment. 
+We conduct the efficiency experiments on 10000 after and before the earthquake images and their features. 4000 after and before the earthquake images are collected fshbb
+or the effectiveness experiment. 
 \yongli{this is confusing. How many images you collected? 10000 + 4000? or the 4000 is in the 10000 actually? why do effectiveness only on 4000? for time reason?}
 \subsection{Measure metrics}
 To evaluate the effectiveness of algorithms, 
@@ -181,14 +182,16 @@ After that, we compare the proposed approach with \textit{SBCD} by performing th
 
 \subsubsection{Effect of clustering}
 
-\subsubsection{Effectiveness comparasion}
-Comparing with existing technique
-We compare our \textit{DTW + change detection} with \textit{SBCD} used in \cite{rs2051217}. We assume 20\% of the building collapse are significant damage, we set the threshold of the unchanged building for the \textit{SBCD} as 80\%.
-In \textit{SBCD} they did not perform the actual building matching. Therefore, in this test we selected 10 ground truth pairs(having similar angle) and 5 non ground truth pairs, which are paired by the \textit{OOS+LIP-IS}. 
-comparing with shape-based approach. (in paper: \textbf{automatic detection of buildings and changes in buildings for updating of maps})
+\subsubsection{Effectiveness comparison}
+We compare our proposed approach \textit{DTW + change detection} with \textit{SBCD} \cite{rs2051217} by performing the change detection over the collected Flickr image datasets.
+We assume 20\% of the building collapse are significant damage, we set the threshold of the unchanged building for the \textit{SBCD} as 80\%.
+In this test we selected 75 pairs of images as ground truth. We divide them into two groups: damaged group with 50 pairs, and undamaged group with 25 pairs. Here, the before images are all undamaged, while the after images in damaged group are damaged and undamaged in undamaged group. 
+%The  imaged Each pair in damaged group consists one undamaged and one undamaged images, undamaged group with two undamaged images, and damaged group with two damaged images. 
+We use two popular metric in information retrieval $precision$ and $recall$ to test change detection performance. $precision$ is the fraction of retrieved images that are relevant, while $recall$ is the fraction of relevant instances that are retrieved. 
 
-by varying the dataset size from small to big, test the probability of missed detection and probability of false alarm at each dataset size point
+From Table X, right/wrong is high in \textit{SBCD}, which means it treated a lot of undamaged buildings as damaged. \textit{SBCD} assume that images always have same angle and size, which is not suitable in social community for different uses have different photographing angles and distances. A slight angle twist leads failure of change detection via \textit{SBCD}. In contrast, \textit{DTW + change detection} is robust to angle and size difference.
 
+by varying the dataset size from small to big, test the probability of missed detection and probability of false alarm at each dataset size point: we could see that the two metrics stay steady.
 
 \subsection{Efficiency}
 
@@ -200,6 +203,9 @@ by varying the dataset size from small to big, test the probability of missed de
 Detection efficiency by varying data size
 
 this is only for comparing our boundary-based approach and existing shape-based approach.
+\bibliographystyle{ieeetr}
+% there are various bibliography styles you can set
 
+\bibliography{reference}
 \end{document}
 

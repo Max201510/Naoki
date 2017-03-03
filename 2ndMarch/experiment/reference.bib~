@@ -24,6 +24,25 @@ doi="10.1007/3-540-28349-8_2",
 url="http://dx.doi.org/10.1007/3-540-28349-8_2"
 }
 
+@article{Zhou:2014:EDO:2628707.2628786,
+ author = {Zhou, Xiangmin and Chen, Lei},
+ title = {Event Detection over Twitter Social Media Streams},
+ journal = {The VLDB Journal},
+ issue_date = {June      2014},
+ volume = {23},
+ number = {3},
+ month = jun,
+ year = {2014},
+ issn = {1066-8888},
+ pages = {381--400},
+ numpages = {20},
+ url = {http://dx.doi.org/10.1007/s00778-013-0320-3},
+ doi = {10.1007/s00778-013-0320-3},
+ acmid = {2628786},
+ publisher = {Springer-Verlag New York, Inc.},
+ address = {Secaucus, NJ, USA},
+ keywords = {Graphical model, Location-time constrained topic, Social event detection, Social streams, Variable dimensional extendible hash},
+} 
 
 @article{110009470680,
 author="HIROI U and SEKIYA Naoya and NAKAJIMA Ryota and WARAGAI Shuntaro and HANAHARA Hidenori",
@@ -225,8 +244,228 @@ url="http://dx.doi.org/10.1023/B:VISI.0000029664.99615.94"
 }
 
 
+@inproceedings{DBLP:conf/mm/ZhangC04,
+  author    = {DongQing Zhang and
+               Shih-Fu Chang},
+  title     = {Detecting image near-duplicate by stochastic attributed
+               relational graph matching with learning.},
+  booktitle = {MM},
+  year      = {2004},
+  pages     = {877-884}, 
+}
 
 
+@inproceedings{DBLP:conf/mm/KeSH04,
+  author    = {Yan Ke and
+               Rahul Sukthankar and
+               Larry Huston},
+  title     = {An efficient parts-based near-duplicate and sub-image retrieval
+               system.},
+  booktitle = {MM},
+  year      = {2004},
+  pages     = {869-876},
+}
 
+@inproceedings{DBLP:conf/mm/LejsekAJA06a,
+  author    = {Herwig Lejsek and
+               Fridrik Heidar {\'A}smundsson and
+               Bj{\"o}rn TH{\'o}r J{\'o}nsson and
+               Laurent Amsaleg},
+  title     = {Scalability of local image descriptors: a comparative study},
+  booktitle = {MM},
+  year      = {2006},
+  pages     = {589-598}, 
+}
+
+@article{10.1109/TPAMI.2005.188,
+  author    = {Krystian Mikolajczyk and Cordelia Schmid},
+  title     = {A Performance Evaluation of Local Descriptors},
+  journal   = {IEEE Trans. on PAMI},
+  volume    = {27},
+  number    = {10},
+  year      = {2005},
+  issn      = {0162-8828},
+  pages     = {1615-1630},
+}
+
+@article{WuZhaoNgoIEEEMM07,
+  author    = {Wan-Lei Zhao and
+               Chong-Wah Ngo and
+	       Hung-Khoom Tan and
+	       Xiao Wu
+               },
+  title     = {Near-Duplicate Keyframe Identification with Interest Point Matching and Pattern Learning.},
+  journal   = {IEEE Trans. on MM},
+  year      = {2007},
+  pages     = {1037-1048},
+}
+
+@article{radke2005image,
+  title={Image change detection algorithms: a systematic survey},
+  author={Radke, Richard J and Andra, Srinivas and Al-Kofahi, Omar and Roysam, Badrinath},
+  journal={IEEE transactions on image processing},
+  volume={14},
+  number={3},
+  pages={294--307},
+  year={2005},
+  publisher={IEEE}
+}
+
+@article{murakami1999change,
+  title={Change detection of buildings using an airborne laser scanner},
+  author={Murakami, Hiroshi and Nakagawa, Katsuto and Hasegawa, Hiroyuki and Shibata, Taku and Iwanami, Eiji},
+  journal={ISPRS Journal of Photogrammetry and Remote Sensing},
+  volume={54},
+  number={2},
+  pages={148--152},
+  year={1999},
+  publisher={Elsevier}
+}
+
+@article{turker2008building,
+  title={Building-based damage detection due to earthquake using the watershed segmentation of the post-event aerial images},
+  author={Turker, Mustafa and Sumer, Emre},
+  journal={Int J Remote Sens},
+  volume={29},
+  number={11},
+  pages={3073--3089},
+  year={2008},
+  publisher={Taylor \& Francis}
+}
+
+@Article{rs2051217,
+AUTHOR = {Matikainen, Leena and Hyyppä, Juha and Ahokas, Eero and Markelin, Lauri and Kaartinen, Harri},
+TITLE = {Automatic Detection of Buildings and Changes in Buildings for Updating of Maps},
+JOURNAL = {Remote Sensing},
+VOLUME = {2},
+YEAR = {2010},
+NUMBER = {5},
+PAGES = {1217--1248},
+ISSN = {2072-4292},
+}
+
+@article{gong2016earthquake,
+  title={Earthquake-Induced Building Damage Detection with Post-Event Sub-Meter VHR TerraSAR-X Staring Spotlight Imagery},
+  author={Gong, Lixia and Wang, Chao and Wu, Fan and Zhang, Jingfa and Zhang, Hong and Li, Qiang},
+  journal={Remote Sensing},
+  volume={8},
+  number={11},
+  pages={887},
+  year={2016},
+  publisher={Multidisciplinary Digital Publishing Institute}
+}
+
+@article{tu2016automatic,
+  title={Automatic Building Damage Detection Method Using High-Resolution Remote Sensing Images and 3D GIS Model.},
+  author={Tu, Jihui and Sui, Haigang and Feng, Wenqing and Song, Zhina},
+  journal={ISPRS Annals of Photogrammetry, Remote Sensing and Spatial Information Sciences},
+  pages={43--50},
+  year={2016}
+}
+
+@inproceedings{DBLP:conf/sigmod/ShenZH05,
+  author    = {Heng Tao Shen and
+               Beng Chin Ooi and
+               Xiaofang Zhou},
+  title     = {Towards Effective Indexing for Very Large Video Sequence Database},
+  booktitle = {SIGMOD},
+  pages     = {730--741},
+  year      = {2005},
+}
+
+@article{DBLP:journals/tmm/ZhouZCBXT09,
+  author    = {Xiangmin Zhou and
+               Xiaofang Zhou and
+               Lei Chen and
+               Athman Bouguettaya and
+               Nong Xiao and
+               John A. Taylor},
+  title     = {An Efficient Near-Duplicate Video Shot Detection Method Using Shot-Based
+               Interest Points},
+  journal   = {{IEEE} Trans. Multimedia},
+  volume    = {11},
+  number    = {5},
+  pages     = {879--891},
+  year      = {2009}  
+}
+
+@article{DBLP:journals/tmm/ZhaoNTW07,
+  author    = {Wanlei Zhao and
+               Chong{-}Wah Ngo and
+               Hung{-}Khoon Tan and
+               Xiao Wu},
+  title     = {Near-Duplicate Keyframe Identification With Interest Point Matching
+               and Pattern Learning},
+  journal   = {{IEEE} Trans. Multimedia},
+  volume    = {9},
+  number    = {5},
+  pages     = {1037--1048},
+  year      = {2007}
+}
+
+@article{DBLP:journals/tkde/ZhouZCSBT10,
+  author    = {Xiangmin Zhou and
+               Xiaofang Zhou and
+               Lei Chen and
+               Yanfeng Shu and
+               Athman Bouguettaya and
+               John A. Taylor},
+  title     = {Adaptive Subspace Symbolization for Content-Based Video Detection},
+  journal   = {{IEEE} Trans. Knowl. Data Eng.},
+  volume    = {22},
+  number    = {10},
+  pages     = {1372--1387},
+  year      = {2010}
+}
+
+
+@inproceedings{DBLP:conf/sigmod/ZhouCZCHW15,
+  author    = {Xiangmin Zhou and
+               Lei Chen and
+               Yanchun Zhang and
+               Longbing Cao and
+               Guangyan Huang and
+               Chen Wang},
+  title     = {Online Video Recommendation in Sharing Community},
+  booktitle = {Proceedings of the 2015 {ACM} {SIGMOD} International Conference on
+               Management of Data, Melbourne, Victoria, Australia, May 31 - June
+               4, 2015},
+  pages     = {1645--1656},
+  year      = {2015}
+}
+
+
+@inproceedings{MartínezFE14,
+  author    = {Víctor Gayoso Martínez and
+		Fernando Hernández Álvarez and
+		Luis Hernández Encinas},
+  title     = {State of the Art in Similarity Preserving Hashing Functions},
+  booktitle = {SAM},
+  pages     = {139-145},
+  year      = {2014},
+}
+
+@book{ilsever2012two,
+  title={Two-Dimensional Change Detection Methods: Remote Sensing Applications},
+  author={{\.I}lsever, M. and Unsalan, C.},
+  isbn={9781447142553},
+  series={SpringerBriefs in Computer Science},
+  url={https://books.google.com.au/books?id=tBsVjPPmYzoC},
+  year={2012},
+  publisher={Springer London}
+}
+
+@inproceedings{Berndt:1994:UDT:3000850.3000887,
+ author = {Berndt, Donald J. and Clifford, James},
+ title = {Using Dynamic Time Warping to Find Patterns in Time Series},
+ booktitle = {Proceedings of the 3rd International Conference on Knowledge Discovery and Data Mining},
+ series = {AAAIWS'94},
+ year = {1994},
+ location = {Seattle, WA},
+ pages = {359--370},
+ numpages = {12},
+ acmid = {3000887},
+ publisher = {AAAI Press},
+ } 
 
 
